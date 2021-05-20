@@ -21,3 +21,5 @@ public_html/storage
 public_html/hot
 
 /.vagrant
+
+composer.phar

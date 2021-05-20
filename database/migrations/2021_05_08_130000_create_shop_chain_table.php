@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShopTable extends Migration
+class CreateShopChainTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateShopTable extends Migration
      */
     public function up()
     {
-        Schema::create('shop', function (Blueprint $table) {
+        Schema::create('shop_chain', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('shop_chain_id');
-            $table->foreign('shop_chain_id')->references('id')->on('shop_chain');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateShopTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shop');
+        Schema::dropIfExists('shop_chain');
     }
 }

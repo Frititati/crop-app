@@ -16,8 +16,8 @@ class CreateCoinGenerationTable extends Migration
         Schema::create('coin_generation', function (Blueprint $table) {
             $table->id();
             $table->string("code");
-            $table->unsignedBigInteger('shop');
-            $table->foreign('shop')->references('id')->on('shop');
+            $table->unsignedBigInteger('shop_id');
+            $table->foreign('shop_id')->references('id')->on('shop');
             $table->timestamps();
         });
     }

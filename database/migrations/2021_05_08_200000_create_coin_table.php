@@ -16,11 +16,11 @@ class CreateCoinTable extends Migration
         Schema::create('coin', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
-            $table->unsignedBigInteger('user');
-            $table->foreign('user')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('shop_id');
+            $table->foreign('shop_id')->references('id')->on('shop');
             $table->timestamp('received_on');
-            $table->unsignedBigInteger('shop');
-            $table->foreign('shop')->references('id')->on('shop');
             $table->timestamps();
         });
     }

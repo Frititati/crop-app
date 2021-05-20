@@ -15,10 +15,10 @@ class CreateShopManagerTable extends Migration
     {
         Schema::create('shop_manager', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user');
-            $table->foreign('user')->references('id')->on('users');
-            $table->unsignedBigInteger('shop');
-            $table->foreign('shop')->references('id')->on('shop');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('shop_id');
+            $table->foreign('shop_id')->references('id')->on('shop');
             $table->string("permission_level");
             $table->timestamps();
         });
