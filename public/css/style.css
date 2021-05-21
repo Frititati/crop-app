@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import "./trigonometry.css";
+
+:root {
+    --crop-yellow: rgba(248, 219, 92, 1);
+    --crop-green: rgba(70, 161, 126, 1);
+    --crop-white: rgba(255, 254, 245, 1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ######################################## */
+
+/* GENERAL PURPOSE CLASSES */
+
+/* Colours */
+
+.text-color-crop-yellow {
+    color: var(--crop-yellow);
+}
+
+.text-color-crop-green {
+    color: var(--crop-green);
+}
+
+/* Background */
+
+.svg-background {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.ellisse {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: fixed;
+    overflow: hidden;
+}
+
+.ellisse.top-left {
+    fill: var(--crop-green);
+    width: 405px;
+    height: 387px;
+    left: -220px;
+    top: -210px;
+    z-index: 0;
+}
+
+.ellisse.bottom-right {
+    fill: var(--crop-yellow);
+    width: 405px;
+    height: 387px;
+    left: calc(50vw + 35px);
+    bottom: -150px;
+    z-index: 0;
+}
+
+/* Ui */
+
+.container-fluid.ui {
+    z-index: 1000;
+    margin-bottom: 100px;
+    min-height: calc(100vh - 100px);
+    height: calc(100vh - 100px);
+}
+
+p {
+    font-size: 10px;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 65px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--crop-green);
+    border-radius: 40px 40px 0 0;
+    padding: 0 40px 0 40px;
+}
+
+.footer-link {
+    align-content: center;
+    display: flex;
+    width: 30px;
+}
+
+.footer-link.logo-crop {
+    position: relative;
+    top: -35px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--crop-white);
+    width: 70px;
+    height: 70px;
+}
+
+.footer-link.left-icon {
+    justify-content: flex-start;
+}
+
+.footer-link.right-icon {
+    justify-content: flex-end;
+}
+
+.icon-footer {
+    width: 100%;
+    height: 25px
+}
+
+.logo-crop .icon-footer {
+    width: 55px;
+    height: 55px;
+}
+
+/* ######################################## */
+
+/* HOME PAGE */
+
+p.description-text {
+    text-align: justify;
+}
+
+.row.home-pill {
+    margin-top: 3rem;
+    padding: .7rem 0 10px 0;
+    background-color: var(--crop-yellow);
+    border-radius: 1.5rem;
+    z-index: 100;
+}
+
+/* Profile picture */
+
+.col-3.image-wrapper {
+    height: fit-content;
+    height: -moz-max-content;
+}
+
+.icon-gear {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    fill: var(--crop-green);
+}
+
+img.drop-shadow {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+}
+
+/* Coin Pills */
+
+.row.coin-pill-row {
+    position: relative;
+    top: -20px;
+    z-index: 1010;
+}
+
+.coin-pill {
+    margin: 0;
+    background-color: var(--crop-green);
+    height: 110px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coin-pill.right {
+    float: right;
+    margin-right: 15px;
+}
+
+.coin-pill.left {
+    float: left;
+    margin-left: 15px;
+}
+
+.center-text {
+    justify-content: center;
+    text-align: center;
+}
+
+.seme-icon-text {
+    height: 1.2rem;
+    margin-left: 5px;
+}
+
+/* Doughnut Chart */
+
+.chart-container {
+    width: 250px;
+}
+
+canvas.doughnut-chart {
+    z-index: 100;
+}
+
+/* Buttons */
+
+.option-btn {
+    width: fit-content;
+    width: -moz-max-content;
+}
+
+.bg-light-green {
+    background-color: rgba(123, 173, 119, 1);
+}
+
+/* ######################################## */
+
+/* QR READER PAGE */
+
+.qr-reader-container {
+    position: absolute;
+    left: calc(50vw - 150px);
+    top: calc(50vh - 200px);
+    text-align: center;
+    width: 300px;
+}
+
+/* ######################################## */
+
+/* MENU REALTA' PAGE */
+
+.circle-category-container {
+    position:absolute;
+    top:calc(50% - 100px);
+    left:calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+}
+
+.circle-category {
+    position:absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    background-color: var(--crop-yellow);
+    width: 100px;
+    height: 100px;
+    transform: translateX(calc(var(--cos) * 100px)) translateY(calc(var(--sin) * 100px));
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* ######################################## */
+
+/* CONFERMA CROP COIN PAGE */
+
+.main-conferma {
+    position:absolute;
+    top: calc(50vh - 125px);
+    left: calc(50% - 100px);
+}
+
+.row-semi-sm {
+    max-height: 1rem;
+    align-items: center;
+}
+
+.col.seme-sm {
+    max-height: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    width:max-content;
+}
+
+img.seme-sm{
+    position:relative;
+    bottom:0.4rem;
+    height: 1rem;
+}
+
+p.transaction-description {
+    margin-bottom: 0;
+    margin-top: 0.1rem;
+}

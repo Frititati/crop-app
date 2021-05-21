@@ -5,32 +5,21 @@ namespace App\Models\Coin;
 // use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Coin extends Model
+class CoinGeneration extends Model
 {
     // use HasFactory;
-	protected $table = 'coin';
+	protected $table = 'coin_generation';
 
 	protected $fillable = [
-		'uuid',
-		'user_id',
+		'code',
 		'shop_id',
-		'coin_generation_id',
-		'received_on'
+		'amount',
+		'done'
 	];
-
-	public function user()
-	{
-		return $this->belongsTo(User::class, 'user');
-	}
 
 	public function shop()
 	{
 		return $this->belongsTo(Shop::class, 'shop');
-	}
-
-	public function generation()
-	{
-		return $this->belongsTo(CoinGeneration::class, 'coin_generation_id');
 	}
 
 	// fix to trailing data

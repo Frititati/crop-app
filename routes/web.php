@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('coin/generation', 'App\Http\Controllers\Coin\CoinGenerationController');
+
 Route::get('/', function () {
     return view('welcome');
 });

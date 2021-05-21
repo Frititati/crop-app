@@ -16,8 +16,10 @@ class CreateCoinGenerationTable extends Migration
         Schema::create('coin_generation', function (Blueprint $table) {
             $table->id();
             $table->string("code");
-            $table->unsignedBigInteger('shop_id');
+            $table->unsignedBigInteger('shop_id')->nullable();
             $table->foreign('shop_id')->references('id')->on('shop');
+            $table->boolean('done')->default(false);
+            $table->integer('amount')->default(1);
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateCoinGenerationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coin_create');
+        Schema::dropIfExists('coin_generation');
     }
 }
