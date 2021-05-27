@@ -10,12 +10,14 @@ use App\Models\Coin\Coin;
 
 use Crypt;
 
+use Auth;
+
 class CoinGenerationController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -31,8 +33,8 @@ class CoinGenerationController extends Controller
         $qr_code = uniqid("", true);
 
         // encrypt it
-        // $encrypted_qr_code = Crypt::encryptString($qr_code);
-        $encrypted_qr_code = $qr_code;
+        $encrypted_qr_code = Crypt::encryptString($qr_code);
+        // $encrypted_qr_code = $qr_code;
 
         // create instance of the gem creation
 
@@ -55,8 +57,8 @@ class CoinGenerationController extends Controller
         ]);
 
         // decrypt qr_code
-        // $qr_code = Crypt::decryptString($validated['qr_code']);
-        $qr_code = $validated['qr_code'];
+        $qr_code = Crypt::decryptString($validated['qr_code']);
+        // $qr_code = $validated['qr_code'];
 
         $generation = CoinGeneration::where('code', $qr_code)->first();
 
@@ -77,7 +79,7 @@ class CoinGenerationController extends Controller
                     // $coin->received_on = now();
                     
                     // remember to add the user here
-                    $coin->user_id = 1;
+                    $coin->user_id = Auth::id();
 
                     // remember to add the shop here
                     $coin->shop_id = 1;

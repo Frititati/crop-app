@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Crop DashBoard
+    Scan QR Crop
 @endsection
 
 @section('content')
@@ -29,7 +29,7 @@
     </div>
 
 
-    <form id="scanning_form" action="/coin/generation" method="POST">
+    <form id="scanning_form" action="/coin/link" method="POST">
         @csrf
         <input type="hidden" name="qr_code" id="form_qr_code">
     </form>

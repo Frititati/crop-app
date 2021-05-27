@@ -23,4 +23,6 @@ Route::get('coin/scan', 'App\Http\Controllers\Coin\CoinGenerationController@inde
 
 Route::get('coin/create', 'App\Http\Controllers\Coin\CoinGenerationController@create');
 
+Route::post('coin/link', 'App\Http\Controllers\Coin\CoinGenerationController@store');
+
 require __DIR__.'/auth.php';
