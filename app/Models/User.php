@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    protected $table = 'users';
+
     // use HasFactory, Notifiable;
     protected $fillable = [
         'name',
@@ -25,4 +27,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function coin()
+    {
+        return $this->hasMany(Coin\Coin::class, 'user_id');
+    }
 }

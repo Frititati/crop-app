@@ -19,7 +19,7 @@ class CoinGenerationController extends Controller
 
     public function index()
     {
-        return view('coin_generation.scan_qr');
+        return view('coin_generation.qr_scan');
     }
 
     public function create()

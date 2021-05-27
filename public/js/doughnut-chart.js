@@ -2,11 +2,11 @@ const dataDoughnut = {
     labels: [
         'Alberi per il Piemonte',
         'Sguardo nel Verde',
-        'Canile di Chieri'
+        'Treedom'
     ],
     datasets: [{
         label: 'My First Dataset',
-        data: [300, 50, 100],
+        data: [33, 33, 33],
         backgroundColor: [
             'rgb(70, 161, 126)',
             'rgb(123, 173, 119)',

@@ -1,56 +1,96 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!doctype html>
+<html lang="it">
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}">
+    <title>Login</title>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <meta name="apple-mobile-web-app-title" content="Crop">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+<body>
+    <div class="svg-background">
+        <svg class="ellisse bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="593" height="593" viewBox="0 0 593 593">
+            <circle cx="287.5" cy="287.5" r="287.5" />
+        </svg>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+    </div>
+
+
+    <!-- Application container -->
+    <div class="container-fluid login d-flex flex-column justify-content-center px-5">
+        <div class="d-flex flex-row justify-content-center mb-3">
+            <div class="img-container-logo mx-5">
+                <img src="{{ asset('images/crop_logo.png') }}">
             </div>
+        </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+            <form method="POST" action="{{ route('login') }}" id="login_form">
+                @csrf
+                
+                <div class="input-group-container mb-2">
+                    <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <img id="email-logo" src="{{ asset('icons/email.svg') }}">
+                            </div>
+                            <input type="email" class="form-control text-input-login ml-2" placeholder="Email..."
+                                aria-describedby="email-logo" name="email" value="Email" required>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <img id="password-logo" src="{{ asset('icons/password.svg') }}">
+                            </div>
+                            <input type="password" name="password" class="form-control text-input-login ml-2" placeholder="Password..."
+                                aria-describedby="password-logo" required autocomplete="current-password">
+                        </div>
+                    </div>
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                </div>
+                <div class="d-flex flex-row justify-content-end mb-3">
+                    <a href="./home.html">
+                        <p class="text-color-crop-white mb-0">Password dimenticata?</p>
                     </a>
-                @endif
+                </div>
+                <div class="d-flex flex-row justify-content-center">
+                    <button type="submit" class="btn btn-yellow-crop" value="Accedi">Accedi</button>
+                </div>
+            </form>
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        <div class="d-flex flex-row justify-content-center footer-login">
+            <p class="text-color-crop-green">Non hai un account? <b><a href="#">Registrati!</a></b></p>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="{{ asset('js/resize.js') }}"></script>
+
+</body>
+
+</html>

@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('coin/generation', 'App\Http\Controllers\Coin\CoinGenerationController');
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('dashboard', 'App\Http\Controllers\User\UserDashboardController@index')->name('dashboard');
+
+Route::get('coin/scan', 'App\Http\Controllers\Coin\CoinGenerationController@index')->name('qr_scan');
+
+Route::get('coin/create', 'App\Http\Controllers\Coin\CoinGenerationController@create');
 
 require __DIR__.'/auth.php';

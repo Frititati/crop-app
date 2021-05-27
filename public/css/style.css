@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import "./trigonometry.css";
-
 :root {
     --crop-yellow: rgba(248, 219, 92, 1);
     --crop-green: rgba(70, 161, 126, 1);
     --crop-white: rgba(255, 254, 245, 1);
+    --app-height: 100%;
 }
 
 * {
@@ -25,11 +25,32 @@
     color: var(--crop-green);
 }
 
+.text-color-crop-white {
+    color: var(--crop-white);
+}
+
+.bg-color-crop-white {
+    background-color: var(--crop-white);
+}
+
+.bg-color-crop-yellow {
+    background-color: var(--crop-yellow);
+}
+
+.bg-color-crop-green {
+    background-color: var(--crop-green);
+}
+
+.filter-drop-shadow {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+}
+
 /* Background */
 
 .svg-background {
     overflow: hidden;
     height: 100vh;
+    height: var(--app-height);
     width: 100vw;
     position: fixed;
     top: 0;
@@ -60,13 +81,26 @@
     z-index: 0;
 }
 
+.ellisse.bottom {
+    fill: var(--crop-yellow);
+    left: calc(-287.5px + 50vw);
+    bottom: -450px;
+    z-index: 0;
+}
+
 /* Ui */
 
-.container-fluid.ui {
+.container-fluid {
     z-index: 1000;
+    max-width: 450px;
+}
+
+.container-fluid.ui {
     margin-bottom: 100px;
     min-height: calc(100vh - 100px);
+    min-height: calc(var(--app-height) - 100px);
     height: calc(100vh - 100px);
+    height: calc(var(--app-height) - 100px);
 }
 
 p {
@@ -192,6 +226,10 @@ img.drop-shadow {
     text-align: center;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
 .seme-icon-text {
     height: 1.2rem;
     margin-left: 5px;
@@ -212,6 +250,11 @@ canvas.doughnut-chart {
 .option-btn {
     width: fit-content;
     width: -moz-max-content;
+    z-index: 1000;
+}
+
+.option-btn-col {
+    margin-right: 1rem;
 }
 
 .bg-light-green {
@@ -225,7 +268,6 @@ canvas.doughnut-chart {
 .qr-reader-container {
     position: absolute;
     left: calc(50vw - 150px);
-    top: calc(50vh - 200px);
     text-align: center;
     width: 300px;
 }
@@ -234,18 +276,8 @@ canvas.doughnut-chart {
 
 /* MENU REALTA' PAGE */
 
-.circle-category-container {
-    position:absolute;
-    top:calc(50% - 100px);
-    left:calc(50% - 100px);
-    width: 200px;
-    height: 200px;
-}
-
 .circle-category {
-    position:absolute;
-    left: calc(50% - 50px);
-    top: calc(50% - 50px);
+    position: absolute;
     background-color: var(--crop-yellow);
     width: 100px;
     height: 100px;
@@ -254,12 +286,16 @@ canvas.doughnut-chart {
     padding-bottom: 1rem;
 }
 
+.circle-category a {
+    color: inherit;
+}
+
 /* ######################################## */
 
 /* CONFERMA CROP COIN PAGE */
 
 .main-conferma {
-    position:absolute;
+    position: absolute;
     top: calc(50vh - 125px);
     left: calc(50% - 100px);
 }
@@ -273,16 +309,113 @@ canvas.doughnut-chart {
     max-height: 1rem;
     padding-left: 0;
     padding-right: 0;
-    width:max-content;
+    width: max-content;
 }
 
-img.seme-sm{
-    position:relative;
-    bottom:0.4rem;
+img.seme-sm {
+    position: relative;
+    bottom: 0.4rem;
     height: 1rem;
 }
 
 p.transaction-description {
     margin-bottom: 0;
     margin-top: 0.1rem;
+}
+
+/* ######################################## */
+
+/* MAPPA NEGOZI PAGE */
+
+#mapid {
+    height: 100%;
+}
+
+.container-fluid.map {
+    min-height: 100vh;
+    min-height: var(--app-height);
+    height: 100vh;
+    height: var(--app-height);
+    max-width: 100%;
+    padding: 0;
+}
+
+/* ######################################## */
+
+/* LOGIN PAGE */
+
+.container-fluid.login {
+    background-color: var(--crop-green);
+    min-height: 100vh;
+    min-height: var(--app-height);
+    height: 100vh;
+    height: var(--app-height);
+    padding: 0;
+}
+
+.img-container-logo img {
+    width: 100%;
+}
+
+div.input-group-login {
+    filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.161));
+}
+
+div.input-group-login:nth-of-type(1) {
+    border-radius: 1.8rem 1.8rem 0 0;
+}
+
+div.input-group-login:nth-of-type(2) {
+    border-radius: 0 0 1.8rem 1.8rem;
+}
+
+.text-input-login {
+    border: 0px;
+    background-color: var(--crop-white);
+    width: calc(100%-1rem);
+    height: 100%;
+    font-size: 0.8rem;
+}
+
+.btn-yellow-crop {
+    background-color: var(--crop-yellow);
+    width: 50%;
+    border-radius: 2rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 12px;
+    color: var(--crop-green);
+    font-weight: bold;
+}
+
+.footer-login {
+    width: 100%;
+    padding-bottom: 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* ######################################## */
+
+/* LISTA REALTA' PAGE */
+
+.realta-list-element {
+    border-bottom: solid 0.5px rgba(0, 0, 0, 0.161);
+
+}
+
+/* ######################################## */
+
+/* PORTFOLIO PAGE */
+
+.portfolio-pill {
+    width: 100px;
+    height: 100px;
+}
+
+.container-fluid.list {
+    min-height: 100vh;
+    min-height: calc(var(--app-height) + 120px);
+    height: 100vh;
+    height: calc(var(--app-height) + 120px);
 }
