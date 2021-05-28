@@ -66,19 +66,78 @@
         </div>
     </div>
 
-    <!-- CHART -->
-    <div class="row justify-content-center mx-5">
-        <canvas id="doughnut-chart" class="doughnut-chart"></canvas>
-    </div>
-    <div class="row flex-row justify-content-end">
-        <div class="option-btn rounded-circle bg-light-green p-2 mr-5">
-            <a href="./visualizza-portfolio.html">
-            <img src="{{ asset('icons/pen.svg') }}">
-            </a>
-        </div>
-    </div>
 
-    <script src="{{ asset('js/chart.min.js') }}"></script>
-    <script src="{{ asset('js/doughnut-chart.js') }}"></script>
+    @if(Auth::user()->portfolio)
+        <!-- CHART -->
+        <div class="row justify-content-center mx-5">
+            <canvas id="portfolio_distribution" class="doughnut-chart"></canvas>
+        </div>
+        <div class="row flex-row justify-content-end">
+            <div class="option-btn rounded-circle bg-light-green p-2 mr-5">
+                <a href="{{ route('portfolio_selection') }}">
+                    <img src="{{ asset('icons/pen.svg') }}">
+                </a>
+            </div>
+        </div>
+
+        <script src="{{ asset('js/chart.min.js') }}"></script>
+
+        <script type="text/javascript">
+
+            window.addEventListener('load', function () {
+                loadPortfolioGraph();
+            })
+
+
+            function loadPortfolioGraph() {
+                const dataPortfolio = {
+                    labels: [
+                        @foreach(Auth::user()->portfolio->division as $division)
+                            @json($division->charity->name),
+                        @endforeach
+                    ],
+                    datasets: [{
+                        label: 'PortFolio',
+                        data: [
+                            @foreach(Auth::user()->portfolio->division as $division)
+                                {{ $division->share }},
+                            @endforeach
+                        ],
+                        backgroundColor: [
+                            'rgb(70, 161, 126)',
+                            'rgb(123, 173, 119)',
+                            'rgb(165, 187, 111)'
+                        ],
+                        hoverOffset: 8
+                    }]
+                }
+
+                const context = document.getElementById('portfolio_distribution').getContext('2d');
+
+                const configDoughnut = {
+                    type: 'doughnut',
+                    data: dataPortfolio,
+                    options: {
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                bodyColor: '#fff',
+                                bodyFont: {
+                                    weight: 'bold',
+                                },
+                                bodyAlign: 'center',
+                            },
+                        },
+                    }
+                };
+
+                const chartDoughnut = new Chart(context, configDoughnut)
+            }
+
+        </script>
+
+    @endif
 
 @endsection

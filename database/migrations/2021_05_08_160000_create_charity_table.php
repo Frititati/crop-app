@@ -16,6 +16,8 @@ class CreateCharityTable extends Migration
         Schema::create('charity', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description')->nullable();
+            $table->string('photo_path')->nullable();
             $table->timestamps();
         });
     }

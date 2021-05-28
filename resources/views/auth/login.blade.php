@@ -19,13 +19,12 @@
 </head>
 
 <body>
-    <div class="svg-background">
+    <!-- <div class="svg-background">
         <svg class="ellisse bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             width="593" height="593" viewBox="0 0 593 593">
             <circle cx="287.5" cy="287.5" r="287.5" />
         </svg>
-
-    </div>
+    </div> -->
 
 
     <!-- Application container -->
@@ -71,7 +70,7 @@
             </form>
 
         <div class="d-flex flex-row justify-content-center footer-login">
-            <p class="text-color-crop-green">Non hai un account? <b><a href="#">Registrati!</a></b></p>
+            <p class="text-color-crop-green">Non hai un account? <b><a href="/register">Registrati!</a></b></p>
         </div>
     </div>
 

@@ -16,7 +16,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'management_account'
+        'management_account',
+        'portfolio_id',
+        'photo_path',
     ];
 
     protected $hidden = [
@@ -27,6 +29,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function portfolio()
+    {
+        return $this->belongsTo(Portfolio\Portfolio::class, 'portfolio_id');
+    }
 
     public function coin()
     {
