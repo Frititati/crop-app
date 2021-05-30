@@ -18,6 +18,7 @@ class CreateCharityTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('photo_path')->nullable();
+            $table->string('category')->nullable();
             $table->timestamps();
         });
     }

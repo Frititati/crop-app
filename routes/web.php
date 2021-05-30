@@ -25,6 +25,8 @@ Route::get('coin/create', 'App\Http\Controllers\Coin\CoinGenerationController@cr
 
 Route::post('coin/link', 'App\Http\Controllers\Coin\CoinGenerationController@store');
 
-Route::get('portofolio/selection', 'App\Http\Controllers\Portfolio\PortofolioSelectionController@selection')->name('portfolio_selection');
+Route::get('portfolio/selection', 'App\Http\Controllers\Portfolio\PortfolioSelectionController@index')->name('portfolio_selection');
+
+Route::post('portfolio/selection', 'App\Http\Controllers\Portfolio\PortfolioSelectionController@store');
 
 require __DIR__.'/auth.php';
