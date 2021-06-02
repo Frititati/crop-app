@@ -33,4 +33,6 @@ Route::get('charity/{category}', 'App\Http\Controllers\Charity\CharityViewContro
 
 Route::get('charity', 'App\Http\Controllers\Charity\CharityViewController@index')->name('charity');
 
+Route::get('shop_map', 'App\Http\Controllers\Shop\ShopViewController@index')->name('shop_map');
+
 require __DIR__.'/auth.php';

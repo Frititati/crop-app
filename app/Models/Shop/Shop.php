@@ -12,7 +12,17 @@ class Shop extends Model
 
 	protected $fillable = [
 		'name',
-		'shop_chain_id'
+		'second_name',
+		'category',
+		'address',
+		'description',
+		'phone_number',
+		'latitude',
+		'longitude',
+		'website_url',
+		'social_link',
+		'photo_path',
+		'shop_chain_id',
 	];
 
 	// fix to trailing data

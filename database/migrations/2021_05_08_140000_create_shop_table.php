@@ -16,6 +16,16 @@ class CreateShopTable extends Migration
         Schema::create('shop', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('second_name')->nullable();
+            $table->string('category')->nullable();
+            $table->string('address')->nullable();
+            $table->string('description')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('website_url')->nullable();
+            $table->string('social_link')->nullable();
+            $table->string('photo_path')->nullable();
             $table->unsignedBigInteger('shop_chain_id')->nullable();
             $table->foreign('shop_chain_id')->references('id')->on('shop_chain');
             $table->timestamps();

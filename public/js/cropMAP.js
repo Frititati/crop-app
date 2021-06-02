@@ -23,7 +23,7 @@ function success(pos) {
 
 	negozi.forEach((value) => {
 		var marker = L.marker([value.latitude, value.longitude], {icon: cropIcon}).addTo(mymap);
-		var str = "<p><b>"+value.name+"</b><br>"+value.address+"</p>";
+		var str = "<p><b>"+value.name+"</b><br>"+value.address+"</p><br><a href=\"./pagina-negozio.html\">più informazioni</a>";
 		marker.bindPopup(str);
 	});
 }
