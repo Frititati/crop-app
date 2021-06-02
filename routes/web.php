@@ -29,4 +29,8 @@ Route::get('portfolio/selection', 'App\Http\Controllers\Portfolio\PortfolioSelec
 
 Route::post('portfolio/selection', 'App\Http\Controllers\Portfolio\PortfolioSelectionController@store');
 
+Route::get('charity/{category}', 'App\Http\Controllers\Charity\CharityViewController@category');
+
+Route::get('charity', 'App\Http\Controllers\Charity\CharityViewController@index')->name('charity');
+
 require __DIR__.'/auth.php';

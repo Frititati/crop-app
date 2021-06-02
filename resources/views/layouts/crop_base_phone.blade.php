@@ -37,7 +37,7 @@
                 <a href="{{ route('dashboard') }}">
                     <div class="footer-link logo-crop rounded-circle"><img src="{{ asset('icons/crop-logo.png') }}" class="icon-footer center-icon"></div>
                 </a>
-                <a href="./menu-realta.html">
+                <a href="{{ route('charity') }}">
                     <div class="footer-link right-icon">
                         <img src="{{ asset('icons/search.svg') }}" class="icon-footer right-icon">
                     </div>
