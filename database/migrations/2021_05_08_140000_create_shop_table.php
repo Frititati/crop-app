@@ -19,7 +19,7 @@ class CreateShopTable extends Migration
             $table->string('second_name')->nullable();
             $table->string('category')->nullable();
             $table->string('address')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();

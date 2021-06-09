@@ -23,14 +23,14 @@
     <div class="row">
         <!-- Profile Pill-->
         <div class="row home-pill mx-3">
-            <div class="col-3 image-wrapper mb-1">
+            <div class="col-3 image-wrapper mb-3 pr-0">
                 <img src="{{ asset('images/blank-profile-picture-973460_640.png') }}" class="rounded-circle w-100 drop-shadow">
-                <img src="{{ asset('icons/gear.svg') }}" class="icon-gear">
+                <!-- <img src="{{ asset('icons/gear.svg') }}" class="icon-gear"> -->
             </div>
             <div class="col-9">
                 <h6 class="font-weight-bold mb-1">{{ Auth::user()->name }}</h6>
-                <p class="font-weight-light description-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Maiores eveniet doloribus dolor nihil fuga voluptate nemo atque
+                <p class="font-weight-light description-text">
+                    <br><br><br>
                 </p>
             </div>
         </div>
@@ -66,18 +66,11 @@
         </div>
     </div>
 
-
     @if(Auth::user()->portfolio)
         <!-- CHART -->
         <div class="row justify-content-center mx-5">
+            <p class="text-large mb-2 text-center">Portfolio: <b>{{ Auth::user()->portfolio->name }}</b></p>
             <canvas id="portfolio_distribution" class="doughnut-chart"></canvas>
-        </div>
-        <div class="row flex-row justify-content-end">
-            <div class="option-btn rounded-circle bg-light-green p-2 mr-5">
-                <a href="{{ route('portfolio_selection') }}">
-                    <img src="{{ asset('icons/pen.svg') }}">
-                </a>
-            </div>
         </div>
 
         <script src="{{ asset('js/chart.min.js') }}"></script>
@@ -139,5 +132,13 @@
         </script>
 
     @endif
+
+    <div class="row flex-row justify-content-end">
+        <div class="option-btn rounded-circle bg-light-green p-2 mr-5">
+            <a href="{{ route('portfolio_selection') }}">
+                <img src="{{ asset('icons/pen.svg') }}">
+            </a>
+        </div>
+    </div>
 
 @endsection

@@ -5,7 +5,7 @@ var options = {
 };
 
 var cropIcon = L.icon({
-	iconUrl:'/assets/icons/crop-logo.png',
+	iconUrl:'/icons/crop-logo.png',
 	iconSize: [30, 30],
 	popupAnchor: [0, -10],
 });

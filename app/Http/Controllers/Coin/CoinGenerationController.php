@@ -41,7 +41,8 @@ class CoinGenerationController extends Controller
         $generation = new CoinGeneration();
         $generation->code = $qr_code;
         $generation->amount = 5;
-        // $generation->shop_id = 0;
+        // default to change
+        $generation->shop_id = 1;
         $generation->save();
 
         // view the qr code
@@ -89,7 +90,9 @@ class CoinGenerationController extends Controller
                     $coins[] = $coin;
                 }
 
-                $generation->done = true;
+                if (!$generation->is_static) {
+                    $generation->done = true;
+                }
                 $generation->save();
 
                 return view('coin_generation.success_scan', compact('coins', 'generation'));

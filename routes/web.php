@@ -35,4 +35,6 @@ Route::get('charity', 'App\Http\Controllers\Charity\CharityViewController@index'
 
 Route::get('shop_map', 'App\Http\Controllers\Shop\ShopViewController@index')->name('shop_map');
 
+Route::resource('shop', 'App\Http\Controllers\Shop\ShopViewController');
+
 require __DIR__.'/auth.php';

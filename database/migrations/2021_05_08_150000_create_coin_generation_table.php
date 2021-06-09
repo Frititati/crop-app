@@ -20,6 +20,7 @@ class CreateCoinGenerationTable extends Migration
             $table->foreign('shop_id')->references('id')->on('shop');
             $table->boolean('done')->default(false);
             $table->integer('amount')->default(1);
+            $table->boolean('is_static')->default(false);
             $table->timestamps();
         });
     }

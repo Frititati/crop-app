@@ -20,12 +20,12 @@ class Coin extends Model
 
 	public function user()
 	{
-		return $this->belongsTo(User::class, 'user_id');
+		return $this->belongsTo('App\Models\User', 'user_id');
 	}
 
 	public function shop()
 	{
-		return $this->belongsTo(Shop::class, 'shop_id');
+		return $this->belongsTo('App\Models\Shop\Shop', 'shop_id');
 	}
 
 	public function generation()

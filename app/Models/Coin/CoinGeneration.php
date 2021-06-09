@@ -19,7 +19,7 @@ class CoinGeneration extends Model
 
 	public function shop()
 	{
-		return $this->belongsTo(Shop::class, 'shop');
+		return $this->belongsTo('App\Models\Shop\Shop', 'shop_id');
 	}
 
 	// fix to trailing data

@@ -25,40 +25,15 @@
             <h3 class="text-color-crop-yellow"><b>COMPLIMENTI</b></h3>
             <h6>Hai ricevuto <b>{{ $generation->amount }} Cropcoin</b>!</h6>
             <div class="row row-semi-sm mb-1">
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
-                <div class="col seme-sm">
-                    <img src="./assets/icons/seme 2.svg" class="seme-sm">
-                </div>
+                @for($i = 0; $i < $generation->amount; $i++ )
+                    <div class="col seme-sm">
+                        <img src="{{ asset('/icons/seme 2.svg') }}" class="seme-sm">
+                    </div>
+                @endfor
             </div>
-            <!-- <p class="transaction-description">Azienda: <b id="nome_azienda">Borello S.R.L.</b></p>
-            <p class="transaction-description">Negozio: <b id="nome_negozio">Corso Racconigi 5 Torino</b></p>
-            <p class="transaction-description">Data: <b id="data_transazione"></b></p> -->
+            <p class="transaction-description">Azienda: <b id="nome_azienda">{{ $generation->shop->name }}</b></p>
+            <p class="transaction-description">Negozio: <b id="nome_negozio">{{ $generation->shop->address }}</b></p>
+            <!-- <p class="transaction-description">Data: <b id="data_transazione">{{ $generation->shop->ts }}</b></p> -->
         </div>
     </div>
 

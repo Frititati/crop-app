@@ -22,17 +22,10 @@ class ShopViewController extends Controller
         return view('shop.map', compact('shops'));
     }
 
-    public function store(Request $request)
+    public function show($id)
     {
-        // $validated = $request->validate([
-        //     "portfolio_id" => ["required", "exists:App\Models\Portfolio\Portfolio,id"]
-        // ]);
+        $shop = Shop::findOrFail($id);
 
-        // $user = Auth::user();
-
-        // $user->portfolio_id = $validated["portfolio_id"];
-        // $user->save();
-
-        // return redirect()->route('dashboard');
+        return view('shop.show', compact('shop'));
     }
 }

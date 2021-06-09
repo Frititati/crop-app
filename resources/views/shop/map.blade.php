@@ -10,9 +10,13 @@
 
     <div id="mapid"></div>
 
-    <script src="{{ asset('js/leaflet.js') }}"></script>
+    <script type="text/javascript">
+        const negozi = @json($shops);
+    </script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}">
-    <script src="{{ asset('js/negozi.js') }}"></script>
+    <!-- <script src="{{ asset('js/negozi.js') }}"></script> -->
     <script src="{{ asset('js/cropMAP.js') }}"></script>
 
 @endsection
