@@ -19,12 +19,12 @@
 </head>
 
 <body>
-    <!-- <div class="svg-background">
+    <div class="svg-background">
         <svg class="ellisse bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             width="593" height="593" viewBox="0 0 593 593">
             <circle cx="287.5" cy="287.5" r="287.5" />
         </svg>
-    </div> -->
+    </div>
 
 
     <!-- Application container -->
@@ -37,7 +37,7 @@
 
             <form method="POST" action="{{ route('login') }}" id="login_form">
                 @csrf
-                
+
                 <div class="input-group-container mb-2">
                     <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
                         <div class="input-group">
@@ -45,7 +45,7 @@
                                 <img id="email-logo" src="{{ asset('icons/email.svg') }}">
                             </div>
                             <input type="email" class="form-control text-input-login ml-2" placeholder="Email..."
-                                aria-describedby="email-logo" name="email" value="Email" required>
+                                aria-describedby="email-logo" name="email" required>
                         </div>
                     </div>
                     <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
