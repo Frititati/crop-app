@@ -14,6 +14,7 @@ class Charity extends Model
         'name',
         'description',
         'photo_path',
+        'short_name',
     ];
 
     // fix to trailing data
