@@ -20,7 +20,7 @@
     </div>
 
     <div class="row main-conferma">
-        <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl={{ $encrypted_qr_code }}&chld=M|0">
+        <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl={{ $encrypted_qr_code }}&chld=M|0" class="mx-auto" alt="Generated QR Code">
     </div>
 
 @endsection

@@ -49,7 +49,6 @@
 
 .svg-background {
     overflow: hidden;
-    height: 100vh;
     height: var(--app-height);
     width: 100vw;
     position: fixed;
@@ -97,9 +96,7 @@
 
 .container-fluid.ui {
     margin-bottom: 100px;
-    min-height: calc(100vh - 100px);
     min-height: calc(var(--app-height) - 100px);
-    height: calc(100vh - 100px);
     height: calc(var(--app-height) - 100px);
 }
 
@@ -301,7 +298,7 @@ canvas.doughnut-chart {
 .main-conferma {
     position: absolute;
     top: calc(50vh - 125px);
-    left: calc(50% - 100px);
+    width: 100%;
 }
 
 .row-semi-sm {
@@ -336,9 +333,7 @@ p.transaction-description {
 }
 
 .container-fluid.map {
-    min-height: 100vh;
     min-height: var(--app-height);
-    height: 100vh;
     height: var(--app-height);
     max-width: 100%;
     padding: 0;
@@ -350,9 +345,7 @@ p.transaction-description {
 
 .container-fluid.login {
     background-color: var(--crop-green);
-    min-height: 100vh;
     min-height: var(--app-height);
-    height: 100vh;
     height: var(--app-height);
     padding: 0;
 }
@@ -374,7 +367,7 @@ div.input-group-login:nth-of-type(2) {
 }
 
 .text-input-login {
-    border: 0px;
+    border: 0;
     background-color: var(--crop-white);
     width: calc(100% - 1rem);
     height: 100%;
@@ -418,9 +411,7 @@ div.input-group-login:nth-of-type(2) {
 }
 
 .container-fluid.list {
-    min-height: 100vh;
     min-height: calc(var(--app-height) + 120px);
-    height: 100vh;
     height: calc(var(--app-height) + 120px);
 }
 

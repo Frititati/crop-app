@@ -19,19 +19,22 @@
 </head>
 
 <body>
-    <div class="svg-background">
-        <svg class="ellisse bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="593" height="593" viewBox="0 0 593 593">
-            <circle cx="287.5" cy="287.5" r="287.5" />
-        </svg>
-    </div>
+
+<!-- <div class="svg-background">
+            <svg class="ellisse bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 width="593" height="593" viewBox="0 0 593 593">
+                <circle cx="287.5" cy="287.5" r="287.5" />
+            </svg>
+        </div> -->
+
 
 
     <!-- Application container -->
     <div class="container-fluid login d-flex flex-column justify-content-center px-5">
+
         <div class="d-flex flex-row justify-content-center mb-3">
             <div class="img-container-logo mx-5">
-                <img src="{{ asset('images/crop_logo.png') }}">
+                <img src="{{ asset('images/crop_logo.png') }}" alt="Crop Logo">
             </div>
         </div>
 
@@ -42,7 +45,7 @@
                     <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <img id="email-logo" src="{{ asset('icons/email.svg') }}">
+                                <img id="email-logo" src="{{ asset('icons/email.svg') }}" alt="Email icon">
                             </div>
                             <input type="email" class="form-control text-input-login ml-2" placeholder="Email..."
                                 aria-describedby="email-logo" name="email" required>
@@ -51,7 +54,7 @@
                     <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <img id="password-logo" src="{{ asset('icons/password.svg') }}">
+                                <img id="password-logo" src="{{ asset('icons/password.svg') }}" alt="Password logo">
                             </div>
                             <input type="password" name="password" class="form-control text-input-login ml-2" placeholder="Password..."
                                 aria-describedby="password-logo" required autocomplete="current-password">
@@ -60,17 +63,17 @@
 
                 </div>
                 <div class="d-flex flex-row justify-content-end mb-3">
-                    <a href="./home.html">
+                    <a href="/login">
                         <p class="text-color-crop-white mb-0">Password dimenticata?</p>
                     </a>
                 </div>
                 <div class="d-flex flex-row justify-content-center">
-                    <button type="submit" class="btn btn-yellow-crop" value="Accedi">Accedi</button>
+                    <button type="submit" class="btn btn-yellow-crop py-2" value="Accedi">Accedi</button>
                 </div>
             </form>
 
         <div class="d-flex flex-row justify-content-center footer-login">
-            <p class="text-color-crop-green">Non hai un account? <b><a href="/register">Registrati!</a></b></p>
+            <h6 class="text-color-crop-yellow">Non hai un account? <b><a href="/register" class="text-color-crop-white">Registrati!</a></b></h6>
         </div>
     </div>
 
