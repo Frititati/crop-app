@@ -97,7 +97,7 @@
 .container-fluid.ui {
     margin-bottom: 100px;
     min-height: calc(var(--app-height) - 100px);
-    height: calc(var(--app-height) - 100px);
+    /*height: calc(var(--app-height) - 100px);*/
 }
 
 p {
@@ -439,3 +439,173 @@ a.negozio-links {
 #map-negozio {
     height: 200px;
 }
+
+
+
+
+
+
+
+
+
+/* ######################################## */
+
+/* Help Instruction PAGE */
+
+
+.row.help-left-pill {
+    margin-top: 1rem;
+    padding: .7rem 0 10px 0;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    margin-left: 0.8rem;
+    border-style: solid;
+    border-color: white;
+    border-width: 0.1rem;
+    z-index: 100;
+    display: hidden;
+}
+
+.row.help-right-pill {
+    margin-top: 1rem;
+    padding: .7rem 0 10px 0;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    margin-right: 0.8rem;
+    border-style: solid;
+    border-color: white;
+    border-width: 0.1rem;
+    z-index: 100;
+    display: hidden;
+}
+
+.help-right-pill.crop-yellow {
+    background-color: var(--crop-yellow);
+}
+
+.help-right-pill.crop-green {
+    background-color: var(--crop-green);
+}
+
+.help-left-pill.crop-yellow {
+    background-color: var(--crop-yellow);
+}
+
+.help-left-pill.crop-green {
+    background-color: var(--crop-green);
+}
+
+.row.help-left-chat{
+    float: left;
+    display: none;
+}
+
+.row.help-right-chat{
+    float: right;
+    display: none;
+}
+
+.icon-help {
+    width: 55px;
+    height: 55px;
+}
+
+.icon-help-small {
+    width: 35px;
+    height: 35px;
+}
+
+
+
+.help-square-top-left {
+    fill: var(--crop-green);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: fixed;
+    overflow: hidden;
+    z-index: 0;
+    height: 100%;
+}
+
+.help-square-bottom-right {
+    fill: var(--crop-yellow);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: fixed;
+    overflow: hidden;
+    z-index: 0;
+    width: 405px;
+    height: 387px;
+    left: calc(50vw + 35px);
+    bottom: -150px;
+}
+
+/*@keyframes fdsseq { 
+    0%   { display: block; opacity: 0;  }
+    30% { display: block; opacity: .5; }
+    60% { display: block; opacity: .8; }
+    100% { display: block; opacity: 1; } 
+}
+#fade-in-div .row {
+    animation: fdsseq 0.5s forwards;
+}
+#fade-in-div .row:nth-child(1) {
+    animation-delay: .5s;
+}
+#fade-in-div .row:nth-child(2) {
+    animation-delay: 1s;
+}
+#fade-in-div .row:nth-child(3) {
+    animation-delay: 1.5s;
+}
+#fade-in-div .row:nth-child(4) {
+    animation-delay: 2s;
+}
+#fade-in-div .row:nth-child(5) {
+    animation-delay: 2.5s;
+}
+#fade-in-div .row:nth-child(6) {
+    animation-delay: 3s;
+}
+#fade-in-div .row:nth-child(7) {
+    animation-delay: 3.5s;
+}
+#fade-in-div .row:nth-child(8) {
+    animation-delay: 4s;
+}
+#fade-in-div .row:nth-child(9) {
+    animation-delay: 4.5s;
+}
+#fade-in-div .row:nth-child(10) {
+    animation-delay: 5s;
+}
+#fade-in-div .row:nth-child(11) {
+    animation-delay: 5.5s;
+}
+#fade-in-div .row:nth-child(12) {
+    animation-delay: 6s;
+}
+#fade-in-div .row:nth-child(13) {
+    animation-delay: 6.5s;
+}
+#fade-in-div .row:nth-child(14) {
+    animation-delay: 7s;
+}
+#fade-in-div .row:nth-child(15) {
+    animation-delay: 7.5s;
+}
+#fade-in-div .row:nth-child(16) {
+    animation-delay: 1.5s;
+}
+#fade-in-div .row:nth-child(17) {
+    animation-delay: 1.5s;
+}
+#fade-in-div .row:nth-child(18) {
+    animation-delay: 1.5s;
+}
+#fade-in-div .row:nth-child(19) {
+    animation-delay: 1.5s;
+}
+#fade-in-div .row:nth-child(20) {
+    animation-delay: 1.5s;
+}*/

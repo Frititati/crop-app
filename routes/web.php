@@ -37,4 +37,6 @@ Route::get('shop_map', 'App\Http\Controllers\Shop\ShopViewController@index')->na
 
 Route::resource('shop', 'App\Http\Controllers\Shop\ShopViewController');
 
+Route::get('user_help', 'App\Http\Controllers\User\UserHelpController@user_help')->name('user_help');
+
 require __DIR__.'/auth.php';
