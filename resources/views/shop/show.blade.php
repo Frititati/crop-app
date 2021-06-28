@@ -13,7 +13,7 @@
         </div>
     </a>
     <div class="d-flex flex-row justify-content-center negozio-profile-pic h-25 mb-3">
-        <img src="{{ $shop->photo_path }}" class="negozio-profile-pic h-100 rounded-circle border">
+        <img src="{{ asset('images/'.$shop->photo_path) }}" class="negozio-profile-pic h-100 rounded-circle border">
     </div>
     <div class="row">
         <h6 class="mx-auto font-weight-bold">{{ $shop->name }}</h6>

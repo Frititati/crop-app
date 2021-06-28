@@ -35,7 +35,7 @@ function createMap(coords){
     //add negozi
     negozi.forEach((value) => {
         var marker = L.marker([value.latitude, value.longitude], {icon: cropIcon}).addTo(mymap);
-        var str = "<p><b>"+value.name+"</b><br>"+value.address+"</p><br><a href=\"./shop/show/"+value.id+"\">più informazioni</a>";
+        var str = "<p><b>"+value.name+"</b><br>"+value.address+"</p><br><a href=\"./shop/"+value.id+"\">più informazioni</a>";
         marker.bindPopup(str);
     });
 }

@@ -35,8 +35,6 @@ Route::get('charity', 'App\Http\Controllers\Charity\CharityViewController@index'
 
 Route::get('shop_map', 'App\Http\Controllers\Shop\ShopViewController@index')->name('shop_map');
 
-Route::get('shop/show/{id}', 'App\Http\Controllers\Shop\ShopViewController@show');
-
 Route::resource('shop', 'App\Http\Controllers\Shop\ShopViewController');
 
 Route::get('user_help', 'App\Http\Controllers\User\UserHelpController@user_help')->name('user_help');
