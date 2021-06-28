@@ -23,8 +23,7 @@
         <div id="loadingMessage" hidden="false">⌛ Loading video...</div>
         <canvas id="canvas" height="300" width="300" class="rounded-circle"></canvas>
         <div id="output">
-            <div id="outputMessage">No QR code detected.</div>
-            <div hidden="true"><b>Data:</b> <span id="outputData"></span></div>
+            <div id="outputMessage">Per scannerizzare il QR, è necessario concedere l'accesso alla fotocamera</div>
         </div>
     </div>
 

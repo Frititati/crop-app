@@ -44,7 +44,7 @@
                 </a>
                 <a href="{{ route('user_help') }}">
                     <div class="footer-link right-icon">
-                        <img src="{{ asset('icons/seme 1.svg') }}" class="icon-footer right-icon">
+                        <img src="{{ asset('icons/question-mark.svg') }}" class="icon-footer right-icon">
                     </div>
                 </a>
             </div>

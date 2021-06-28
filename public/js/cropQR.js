@@ -38,7 +38,8 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
   video.srcObject = stream;
   video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
   video.play();
-  requestAnimationFrame(tick);
+    outputMessage.hidden = true;
+    requestAnimationFrame(tick);
 });
 
 var form_submitted = false;
@@ -46,8 +47,8 @@ var form_submitted = false;
 function tick() {
   loadingMessage.innerText = "⌛ Loading video..."
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
-    loadingMessage.hidden = true;
-    canvasElement.hidden = false;
+      loadingMessage.hidden = true;
+      canvasElement.hidden = false;
     outputContainer.hidden = false;
 
     canvasElement.height = video.videoHeight;
@@ -62,7 +63,6 @@ function tick() {
       drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
       drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
-      outputMessage.hidden = true;
       outputData.parentElement.hidden = false;
       //outputData.innerText = code.data;
       var code_decoded = {};
@@ -87,8 +87,6 @@ function tick() {
         form_submitted = true;
       }
     } else {
-      outputMessage.hidden = false;
-      outputData.parentElement.hidden = true;
     }
   }
   requestAnimationFrame(tick);

@@ -6,7 +6,7 @@ var options = {
 
 var cropIcon = L.icon({
     iconUrl:'/icons/crop-logo.png',
-    iconSize: [30, 30],
+    iconSize: [35, 35],
     popupAnchor: [0, -10],
 });
 

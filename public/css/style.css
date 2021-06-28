@@ -464,7 +464,9 @@ a.negozio-links {
     border-color: white;
     border-width: 0.1rem;
     z-index: 100;
-    display: hidden;
+    max-width: 270px;
+    min-width: 250px;
+    text-align: left;
 }
 
 .row.help-right-pill {
@@ -478,7 +480,9 @@ a.negozio-links {
     border-color: white;
     border-width: 0.1rem;
     z-index: 100;
-    display: hidden;
+    max-width: 270px;
+    min-width: 250px;
+    text-align: right;
 }
 
 .help-right-pill.crop-yellow {
@@ -540,11 +544,11 @@ a.negozio-links {
     bottom: -150px;
 }
 
-/*@keyframes fdsseq { 
+/*@keyframes fdsseq {
     0%   { display: block; opacity: 0;  }
     30% { display: block; opacity: .5; }
     60% { display: block; opacity: .8; }
-    100% { display: block; opacity: 1; } 
+    100% { display: block; opacity: 1; }
 }
 #fade-in-div .row {
     animation: fdsseq 0.5s forwards;
