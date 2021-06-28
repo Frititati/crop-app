@@ -17,7 +17,7 @@ class CreateCoinTable extends Migration
             $table->id();
             $table->string('uuid')->unique();
             $table->string('group')->nullable();
-            $table->timestamp('received_on')->nullable();
+            $table->timestamp('received_at')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('shop_id');

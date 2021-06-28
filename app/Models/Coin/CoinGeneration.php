@@ -14,12 +14,19 @@ class CoinGeneration extends Model
 		'code',
 		'shop_id',
 		'amount',
-		'done'
+		'done',
+		'is_static',
+		'is_active'
 	];
 
 	public function shop()
 	{
 		return $this->belongsTo('App\Models\Shop\Shop', 'shop_id');
+	}
+
+	public function coins()
+	{
+		return $this->hasMany(Coin::class, 'coin_generation_id');
 	}
 
 	// fix to trailing data

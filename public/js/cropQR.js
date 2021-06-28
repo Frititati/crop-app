@@ -63,7 +63,7 @@ function tick() {
       drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
       drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
-      outputData.parentElement.hidden = false;
+      // outputData.parentElement.hidden = false;
       //outputData.innerText = code.data;
       var code_decoded = {};
       console.log(code.data);

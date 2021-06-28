@@ -77,6 +77,14 @@
                                 List
                             </a>
                             <hr class="navbar-divider">
+                            <a class="navbar-item" href="/generation/manage/create">
+                                Create
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="/generation/manage/qr_scan_out">
+                                QR Test
+                            </a>
+                            <hr class="navbar-divider">
                             <a class="navbar-item" href="/generation/manage/download_static" target="_blank">
                                 Download All Static
                             </a>

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Crypt;
 
 use App\Models\Coin\CoinGeneration;
+use App\Models\Shop\Shop;
 
 class GenerationController extends Controller
 {
@@ -38,67 +39,81 @@ class GenerationController extends Controller
         return view('management.generation.download_static', compact('generations'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $this->authorize('is_management');
+
+        $shops = Shop::where('is_active', true)->get();
+
+        return view('management.generation.create', compact('shops'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            "is_static" => ["required","boolean"],
+            "shop_id" => ["required","integer"],
+            "amount" => ["required","integer"],
+        ]);
+
+        $code = uniqid("", true);
+
+        $validated["code"] = $code;
+
+        $generation = CoinGeneration::create($validated);
+
+        return redirect('/generation/manage/'.$generation->id);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $this->authorize('is_management');
+
+        $generation = CoinGeneration::findOrFail($id);
+
+        $coins = $generation->coins;
+
+        $encrypted_qr_code = Crypt::encryptString($generation->code);
+
+        return view('management.generation.show', compact('generation', 'coins', 'encrypted_qr_code'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function qrScanOut()
+    {
+        $this->authorize('is_management');
+
+        return view('management.generation.qr_scan');
+    }
+
+    public function qrScanIn(Request $request)
+    {
+        $this->authorize('is_management');
+
+        $validated = $request->validate([
+            "qr_code" => ["required"]
+        ]);
+
+        $qr_code = Crypt::decryptString($validated['qr_code']);
+
+        $generation = CoinGeneration::where('code', $qr_code)->first();
+
+        if (!is_null($generation)) {
+            return redirect('/generation/manage/'.$generation->id);
+        } else {
+            return back()->withErrors('It is not a Crop QR... sorry');
+        }
+    }
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

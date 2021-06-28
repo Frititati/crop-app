@@ -12,10 +12,10 @@
 	</h1>
 
 	<script type="text/javascript">
-		var csv_file = "ID, CODE, ENCRYPTED, AMOUNT, SHOP, CREATED, ACTIVE\n";
+		var csv_file = "ID,CODE,ENCRYPTED,AMOUNT,SHOP,CREATED,ACTIVE\n";
 
 		@foreach($generations as $item)
-			csv_file += "{{ $item->id }}, {{ $item->code }}, {{ $item->encrypted_code }}, {{ $item->amount }}, {{ $item->shop_id }}, {{ $item->created_at }}, {{ $item->is_active }}\n";
+			csv_file += "{{ $item->id }},{{ $item->code }},{{ $item->encrypted_code }},{{ $item->amount }},{{ $item->shop_id }},{{ $item->created_at }},{{ $item->is_active }}\n";
 		@endforeach
 
 		function download_csv() {

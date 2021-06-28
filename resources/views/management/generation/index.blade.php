@@ -41,7 +41,9 @@
 			@foreach($generations as $item)
 				<tr>
 					<td>
-						{{ $item->id }}
+						<a href="/generation/manage/{{ $item->id }}">
+							{{ $item->id }}
+						</a>
 					</td>
 					<td>
 						<a href="/shop/manage/{{ $item->shop->id }}">
@@ -49,9 +51,7 @@
 						</a>
 					</td>
 					<td>
-						<a href="/shop/manage/{{ $item->shop->id }}">
-							{{ $item->shop->id }}
-						</a>
+						{{ $item->shop->id }}
 					</td>
 					<td>
 						{{ $item->amount ?? "-" }}

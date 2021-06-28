@@ -85,7 +85,7 @@ class CoinGenerationController extends Controller
                         $coin->coin_generation_id = $generation->id;
                         $coin->group = $group_id;
 
-                        $coin->received_on = now();
+                        $coin->received_at = now();
                         
                         // remember to add the user here
                         $coin->user_id = Auth::id();
