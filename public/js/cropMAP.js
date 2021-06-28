@@ -1,13 +1,13 @@
 var options = {
-	enableHighAccuracy: true,
-	timeout: 5000,
-	maximumAge: 0
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
 };
 
 var cropIcon = L.icon({
-	iconUrl:'/icons/crop-logo.png',
-	iconSize: [30, 30],
-	popupAnchor: [0, -10],
+    iconUrl:'/icons/crop-logo.png',
+    iconSize: [30, 30],
+    popupAnchor: [0, -10],
 });
 
 var currentLocationIcon = L.icon({
@@ -18,7 +18,7 @@ var currentLocationIcon = L.icon({
 function createMap(coords){
 
     //set map
-    var mymap = L.map('mapid').setView([coords.latitude, coords.longitude], 15);
+    var mymap = L.map('mapid', {"tap": false}).setView([coords.latitude, coords.longitude], 15);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -35,20 +35,20 @@ function createMap(coords){
     //add negozi
     negozi.forEach((value) => {
         var marker = L.marker([value.latitude, value.longitude], {icon: cropIcon}).addTo(mymap);
-        var str = "<p><b>"+value.name+"</b><br>"+value.address+"</p><br><a href=\"/shop/" + value.id + "\">più informazioni</a>";
+        var str = "<p><b>"+value.name+"</b><br>"+value.address+"</p><br><a href=\"./shop/show/"+value.id+"\">più informazioni</a>";
         marker.bindPopup(str);
     });
 }
 
 
 function success(pos) {
-	createMap(pos.coords);
+    createMap(pos.coords);
 }
 
 function error(err) {
-	/*alert("Attiva i servizi di localizzazione")
+    /*alert("Attiva i servizi di localizzazione")
 
-	alert(err.code + " " + err.message)*/
+    alert(err.code + " " + err.message)*/
     createMap({
         latitude: 45.0695947,
         longitude: 7.6870294,
@@ -57,7 +57,7 @@ function error(err) {
 }
 
 if (navigator.geolocation) {
-	navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.getCurrentPosition(success, error, options);
 } else {
     createMap({
         latitude: 45.0695947,
@@ -65,5 +65,3 @@ if (navigator.geolocation) {
         accuracy: 0,
     })
 }
-
-

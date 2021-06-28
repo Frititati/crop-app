@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Map
+    Crop - {{ $shop->name }}
 @endsection
 
 @section('content')
@@ -13,19 +13,18 @@
         </div>
     </a>
     <div class="d-flex flex-row justify-content-center negozio-profile-pic h-25 mb-3">
-        <img src="{{ asset('images/'.$shop->photo_path) }}" class="negozio-profile-pic h-100 rounded-circle border">
+        <img src="{{ $shop->photo_path }}" class="negozio-profile-pic h-100 rounded-circle border">
     </div>
     <div class="row">
         <h6 class="mx-auto font-weight-bold">{{ $shop->name }}</h6>
     </div>
     <div class="row">
-        <p class="mx-auto">dona 10 Crops per ogni acquisto
-        </h6>
+        <p class="mx-auto">dona 10 Crops per ogni acquisto</p>
     </div>
     <!-- Links Row-->
     <div class="d-flex flex-row justify-content-between mx-4">
         <!-- Phone -->
-        <a class="negozio-links" href="tel:+393930210168">
+        <a class="negozio-links" href="tel:{{$shop -> phone_number}}">
             <div class="d-flex flex-column align-content-center">
                 <div class="circle-button rounded-circle filter-drop-shadow text-center mb-2"><img
                     class="h-100 mx-auto" src="{{ asset('icons/phone.svg') }}"></div>
@@ -35,7 +34,7 @@
             </div>
         </a>
         <!-- Directions -->
-        <a class="negozio-links" href="https://www.google.com/maps/dir/?api=1&destination=Borello+Supermercato+Corso+Racconigi+5+Torino+Italia">
+        <a class="negozio-links" href="https://www.google.com/maps/dir/?api=1&destination={{$shop -> address}}">
             <div class="d-flex flex-column align-content-center">
                 <div class="circle-button rounded-circle filter-drop-shadow text-center mb-2"><img
                     class="h-100 mx-auto" src="{{ asset('icons/directions.svg') }}"></div>
@@ -45,7 +44,7 @@
             </div>
         </a>
         <!-- Website -->
-        <a class="negozio-links" href="{{ $shop->url }}">
+        <a class="negozio-links" href="{{ $shop->website_url }}">
             <div class="d-flex flex-column align-content-center">
                 <div class="circle-button rounded-circle filter-drop-shadow text-center mb-2"><img
                     class="h-100 mx-auto" src="{{ asset('icons/website.svg') }}"></div>
@@ -69,7 +68,7 @@
     <div class="rounded border" id="map-negozio">
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{{ asset('js/leaflet.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}">
 
     <script>
