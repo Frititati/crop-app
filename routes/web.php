@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
 
 Route::get('dashboard', 'App\Http\Controllers\User\UserDashboardController@index')->name('dashboard');
@@ -39,7 +39,7 @@ Route::get('charity', 'App\Http\Controllers\Charity\CharityViewController@index'
 
 Route::get('shop_map', 'App\Http\Controllers\Shop\ShopViewController@index')->name('shop_map');
 
-Route::resource('shop/manage', 'App\Http\Controllers\Management\ShopController');
+Route::resource('shop/manage', 'App\Http\Controllers\Management\ShopController', array("as" => "shop_manage"));
 Route::resource('shop', 'App\Http\Controllers\Shop\ShopViewController');
 
 Route::get('user_help', 'App\Http\Controllers\User\UserHelpController@user_help')->name('user_help');

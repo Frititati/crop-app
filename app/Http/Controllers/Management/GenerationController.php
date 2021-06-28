@@ -106,16 +106,16 @@ class GenerationController extends Controller
 
     public function edit($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function update(Request $request, $id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function destroy($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 }
