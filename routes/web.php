@@ -19,11 +19,13 @@ Route::get('/', function () {
 
 Route::get('dashboard', 'App\Http\Controllers\User\UserDashboardController@index')->name('dashboard');
 
-Route::get('coin/scan', 'App\Http\Controllers\Coin\CoinGenerationController@index')->name('qr_scan');
+Route::get('/generation/manage/download_static', 'App\Http\Controllers\Management\GenerationController@downloadStatic');
+Route::resource('generation/manage', 'App\Http\Controllers\Management\GenerationController');
 
-Route::get('coin/create', 'App\Http\Controllers\Coin\CoinGenerationController@create');
+// Route::get('coin/create', 'App\Http\Controllers\Coin\CoinGenerationController@create');
 
-Route::post('coin/link', 'App\Http\Controllers\Coin\CoinGenerationController@store');
+Route::get('qr_scan', 'App\Http\Controllers\Coin\CoinGenerationController@index')->name('qr_scan');
+Route::post('qr_link', 'App\Http\Controllers\Coin\CoinGenerationController@store');
 
 Route::get('portfolio/selection', 'App\Http\Controllers\Portfolio\PortfolioSelectionController@index')->name('portfolio_selection');
 
@@ -35,8 +37,11 @@ Route::get('charity', 'App\Http\Controllers\Charity\CharityViewController@index'
 
 Route::get('shop_map', 'App\Http\Controllers\Shop\ShopViewController@index')->name('shop_map');
 
+Route::resource('shop/manage', 'App\Http\Controllers\Management\ShopController');
 Route::resource('shop', 'App\Http\Controllers\Shop\ShopViewController');
 
 Route::get('user_help', 'App\Http\Controllers\User\UserHelpController@user_help')->name('user_help');
+
+Route::resource('management', 'App\Http\Controllers\Management\GeneralController');
 
 require __DIR__.'/auth.php';

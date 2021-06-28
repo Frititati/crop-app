@@ -42,31 +42,31 @@ class UserDashboardController extends Controller
 
     public function create()
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function store(Request $request)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function show($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function edit($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function update(Request $request, $id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function destroy($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 }

@@ -28,6 +28,7 @@ class CreateShopTable extends Migration
             $table->string('photo_path')->nullable();
             $table->unsignedBigInteger('shop_chain_id')->nullable();
             $table->foreign('shop_chain_id')->references('id')->on('shop_chain');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

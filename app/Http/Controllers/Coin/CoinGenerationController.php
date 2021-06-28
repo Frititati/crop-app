@@ -29,6 +29,8 @@ class CoinGenerationController extends Controller
         // check if this user already has an open creation
         // if so don't open another
 
+        $this->authorize('is_management');
+
         // generate qr code
         $qr_code = uniqid("", true);
 
@@ -66,70 +68,81 @@ class CoinGenerationController extends Controller
         if (!is_null($generation)) {
             // we have a legit code here
 
-            if (!$generation->done) {
-                // the code as never been registered before
+            if ($generation->is_active) {
+                // the code is active
 
-                // generate the Coins!
-                $coins = collect(new Coin());
-                for ($i=0; $i < $generation->amount ; $i++) {
-                    $coin_code = uniqid($i, true);
-                    $coin = new Coin();
-                    $coin->uuid = $coin_code;
-                    $coin->coin_generation_id = $generation->id;
+                if (!$generation->done) {
+                    // the code as never been registered before
 
-                    // $coin->received_on = now();
-                    
-                    // remember to add the user here
-                    $coin->user_id = Auth::id();
+                    $group_id = uniqid($generation->id, true);
 
-                    // remember to add the shop here
-                    $coin->shop_id = 1;
+                    // generate the Coins!
+                    $coins = collect(new Coin());
+                    for ($i=0; $i < $generation->amount ; $i++) {
+                        $coin_code = uniqid($i, true);
+                        $coin = new Coin();
+                        $coin->uuid = $coin_code;
+                        $coin->coin_generation_id = $generation->id;
+                        $coin->group = $group_id;
 
-                    $coin->save();
+                        $coin->received_on = now();
+                        
+                        // remember to add the user here
+                        $coin->user_id = Auth::id();
 
-                    $coins[] = $coin;
+                        // remember to add the shop here
+                        $coin->shop_id = $generation->shop_id;
+
+                        $coin->save();
+
+                        $coins[] = $coin;
+                    }
+
+                    if (!$generation->is_static) {
+                        $generation->done = true;
+                    }
+                    $generation->save();
+
+                    return view('coin_generation.success_scan', compact('coins', 'generation'));
+
+                } else {
+                    // error as the code has been registerd before
+                    $message = "Questo Codice e' gia stato usato e non puoi essere riutilizato!";
+                    return view('coin_generation.error', compact('message'));
                 }
-
-                if (!$generation->is_static) {
-                    $generation->done = true;
-                }
-                $generation->save();
-
-                return view('coin_generation.success_scan', compact('coins', 'generation'));
-
             } else {
-                // error as the code has been registerd before
-                $message = "This Code has already been used";
+                // error as the code is not active
+                $message = "Questo Codice non e' attivo attualmente!";
                 return view('coin_generation.error', compact('message'));
             }
 
         } else {
             // error as the code does not exist on the database
-            $message = "This Code is not valid";
+            $message = "Questo Codice non e' valido!";
             return view('coin_generation.error', compact('message'));
         }
 
-        $message = "Unknown error";
+        $message = "Errore sconosciuto, riprovare grazie.";
         return view('coin_generation.error');
     }
 
     public function show($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function edit($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function update(Request $request, $id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 
     public function destroy($id)
     {
-        //
+        abort(500, 'Unavailable Action.');
     }
 }

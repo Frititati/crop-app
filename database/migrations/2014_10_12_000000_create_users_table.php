@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('portfolio_id')->nullable();
             $table->string('photo_path')->nullable();
             $table->rememberToken();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

@@ -16,10 +16,14 @@ class CreateCharityTable extends Migration
         Schema::create('charity', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('second_name');
+            $table->string('short_name');
             $table->text('description')->nullable();
             $table->string('photo_path')->nullable();
             $table->string('category')->nullable();
-            $table->string('short_name');
+            $table->string('website_url')->nullable();
+            $table->string('social_link')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

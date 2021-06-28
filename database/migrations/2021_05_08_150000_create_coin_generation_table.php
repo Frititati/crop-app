@@ -21,6 +21,7 @@ class CreateCoinGenerationTable extends Migration
             $table->boolean('done')->default(false);
             $table->integer('amount')->default(1);
             $table->boolean('is_static')->default(false);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
