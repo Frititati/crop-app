@@ -12,9 +12,14 @@ class Charity extends Model
 
     protected $fillable = [
         'name',
+        'second_name',
         'description',
+        'category',
         'photo_path',
         'short_name',
+        'website_url',
+        'social_link',
+        'is_active'
     ];
 
     // fix to trailing data

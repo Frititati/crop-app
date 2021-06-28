@@ -23,6 +23,7 @@ class Shop extends Model
 		'social_link',
 		'photo_path',
 		'shop_chain_id',
+		'is_active'
 	];
 
 	// fix to trailing data
