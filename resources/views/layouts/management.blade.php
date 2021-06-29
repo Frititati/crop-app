@@ -42,6 +42,22 @@
             <div id="navbarBasicExample" class="navbar-menu">
 
                 <div class="navbar-start">
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            User
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="/user/manage">
+                                List
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="/user/manage/create">
+                                Create
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
                             Shop

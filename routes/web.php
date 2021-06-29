@@ -44,6 +44,8 @@ Route::resource('shop', 'App\Http\Controllers\Shop\ShopViewController');
 
 Route::get('user_help', 'App\Http\Controllers\User\UserHelpController@user_help')->name('user_help');
 
+Route::resource('user/manage', 'App\Http\Controllers\Management\UserController');
+
 Route::resource('management', 'App\Http\Controllers\Management\GeneralController');
 
 require __DIR__.'/auth.php';

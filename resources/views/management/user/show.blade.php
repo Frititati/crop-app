@@ -4,8 +4,13 @@
 <div class="columns">
     <div class="column is-6">
         <h1 class="title">
-            Generation ID : {{ $generation->id }}
+            {{ $user->name ?? "-" }} {{ $user->surname ?? "-" }}
         </h1>
+    </div>
+    <div class="column">
+        <a href="/user/manage/{{ $user->id }}/edit" class="button is-warning">
+            Edit User Details
+        </a>
     </div>
 </div>
 
@@ -18,12 +23,12 @@
             <table class="table is-fullwidth">
                 <tr>
                     <th>
-                        Code
+                        Username
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        {{ $generation->code }}
+                        {{ $user->username ?? "-" }}
                     </td>
                 </tr>
             </table>
@@ -33,57 +38,12 @@
             <table class="table is-fullwidth">
                 <tr>
                     <th>
-                        Shop
+                        Email
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        {{ $generation->shop->name }}
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="column">
-            <table class="table is-fullwidth">
-                <tr>
-                    <th>
-                        Amount to Generate
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        {{ $generation->amount }}
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="column">
-            <table class="table is-fullwidth">
-                <tr>
-                    <th>
-                        Is Concluded
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        {{ $generation->done ? "Yes" : "No" }}
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="column">
-            <table class="table is-fullwidth">
-                <tr>
-                    <th>
-                        Is Static
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        {{ $generation->is_static ? "Yes" : "No" }}
+                        {{ $user->email }}
                     </td>
                 </tr>
             </table>
@@ -98,7 +58,7 @@
                 </tr>
                 <tr>
                     <td>
-                        {{ $generation->is_active ? "Yes" : "No" }}
+                        {{ $user->is_active ? "Yes" : "No" }}
                     </td>
                 </tr>
             </table>
@@ -108,7 +68,7 @@
             <table class="table is-fullwidth">
                 <tr>
                     <th>
-                        Total Coins Generated
+                        Total Coins
                     </th>
                 </tr>
                 <tr>
@@ -117,14 +77,6 @@
                     </td>
                 </tr>
             </table>
-        </div>
-    </div>
-</div>
-
-<div class="columns">
-    <div class="column is-narrow">
-        <div class="box">
-            <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl={{ $encrypted_qr_code }}&chld=M|0" class="mx-auto" alt="Generated QR Code">
         </div>
     </div>
 </div>
@@ -138,9 +90,6 @@
             <tr>
                 <th>
                     ID
-                </th>
-                <th>
-                    User Associated
                 </th>
                 <th>
                     Group
@@ -157,9 +106,6 @@
                         {{ $coin->id }}
                     </td>
                     <td>
-                        {{ $coin->user->name }}
-                    </td>
-                    <td>
                         {{ $coin->group ?? "" }}
                     </td>
                     <td>
@@ -170,5 +116,6 @@
         </tbody>
     </table>
 </div>
+
 
 @endsection

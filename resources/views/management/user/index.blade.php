@@ -4,7 +4,7 @@
 <div class="columns">
 	<div class="column is-6">
 		<h1 class="title">
-			Generation Code List
+			User List
 		</h1>
 	</div>
 </div>
@@ -18,52 +18,46 @@
 					ID
 				</td>
 				<th>
-					Shop Name
+					Username
 				</th>
 				<th>
-					Shop ID
+					Name
 				</th>
 				<th>
-					Coin Amount
-				</th>
-				<th>
-					Is Static
+					Surname
 				</th>
 				<th>
 					Is Active
 				</th>
 				<th>
-					Is Done
+					Email
 				</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($generations as $item)
+			@foreach($users as $item)
 				<tr>
 					<td>
-						<a href="/generation/manage/{{ $item->id }}">
+						<a href="/user/manage/{{ $item->id }}">
 							{{ $item->id }}
 						</a>
 					</td>
 					<td>
-						<a href="/shop/manage/{{ $item->shop->id }}">
-							{{ $item->shop->name }}
+						<a href="/user/manage/{{ $item->id }}">
+							{{ $item->username ?? "-" }}
 						</a>
 					</td>
 					<td>
-						{{ $item->shop->id }}
+						{{ $item->name ?? "-" }}
 					</td>
 					<td>
-						{{ $item->amount ?? "-" }}
-					</td>
-					<td>
-						{{ $item->is_static ? "Yes" : "No" }}
+						{{ $item->surname ?? "-" }}
 					</td>
 					<td>
 						{{ $item->is_active ? "Yes" : "No" }}
 					</td>
 					<td>
-						{{ $item->done ? "Yes" : "No" }}
+						{{ $item->email ?? "-" }}
 					</td>
 				</tr>
 			@endforeach
