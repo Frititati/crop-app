@@ -59,6 +59,7 @@ class GenerationController extends Controller
         $code = uniqid("", true);
 
         $validated["code"] = $code;
+        $validated["is_active"] = True;
 
         $generation = CoinGeneration::create($validated);
 
