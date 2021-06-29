@@ -66,6 +66,10 @@
                             <a class="navbar-item" href="/shop/manage">
                                 List All
                             </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="/shop/manage/create">
+                                Create
+                            </a>
                         </div>
                     </div>
 

@@ -26,6 +26,11 @@ class Shop extends Model
 		'is_active'
 	];
 
+	public function coins()
+	{
+		return $this->hasMany(\App\Models\Coin\Coin::class, 'shop_id');
+	}
+
 	// fix to trailing data
 	public function getDateFormat()
 	{
