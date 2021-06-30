@@ -48,4 +48,6 @@ Route::resource('user/manage', 'App\Http\Controllers\Management\UserController',
 
 Route::resource('management', 'App\Http\Controllers\Management\GeneralController');
 
+Route::get('/el/{code}', 'App\Http\Controllers\Link\LinkController@externalLink');
+
 require __DIR__.'/auth.php';
