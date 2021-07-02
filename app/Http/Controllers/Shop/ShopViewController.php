@@ -26,6 +26,17 @@ class ShopViewController extends Controller
     {
         $shop = Shop::findOrFail($id);
 
-        return view('shop.show', compact('shop'));
+        $social_network = null;
+        if (!is_null($shop->social_link)) {
+            if (str_contains($shop->social_link, 'facebook')) {
+                $social_network = 'Facebook';
+            } elseif (str_contains($shop->social_link, 'instagram')) {
+                $social_network = 'Instagram';
+            } else {
+                $social_network = 'Social';
+            }
+        }
+
+        return view('shop.show', compact('shop', 'social_network'));
     }
 }
