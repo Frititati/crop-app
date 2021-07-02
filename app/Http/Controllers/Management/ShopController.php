@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Management;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Session;
+
 use App\Models\Shop\Shop;
 
 class ShopController extends Controller
