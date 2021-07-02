@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Crop DashBoard
+    Istruzioni
 @endsection
 
 @section('content')

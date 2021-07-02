@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Crop - Mappa Negozi
+    Mappa Negozi
 @endsection
 
 @section('content')

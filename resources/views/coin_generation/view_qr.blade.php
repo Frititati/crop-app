@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Ricevuti Crops
+    Visualizza QR
 @endsection
 
 @section('content')

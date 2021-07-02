@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Scan QR Crop
+    Scannerizza QR
 @endsection
 
 @section('content')

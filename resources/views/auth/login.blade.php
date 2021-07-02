@@ -72,9 +72,9 @@
                 </div>
             </form>
 
-        <div class="d-flex flex-row justify-content-center footer-login">
+        <!--<div class="d-flex flex-row justify-content-center footer-login">
             <h6 class="text-color-crop-yellow">Non hai un account? <b><a href="/register" class="text-color-crop-white">Registrati!</a></b></h6>
-        </div>
+        </div>-->
     </div>
 
 

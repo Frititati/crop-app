@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Crop - {{ $shop->name }}
+    {{ $shop->name }}
 @endsection
 
 @section('content')

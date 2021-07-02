@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Ricevuti Crops
+    Ricevuti {{ $generation->amount }} Crops
 @endsection
 
 @section('content')
@@ -25,7 +25,7 @@
             <h3 class="text-color-crop-yellow"><b>COMPLIMENTI</b></h3>
             <h6>Hai ricevuto <b>{{ $generation->amount }} Crops</b>!</h6>
             <div class="row row-semi-sm mb-2 mx-5">
-                @for($i = 0; $i < 10; $i++)
+                @for($i = 0; $i < 12; $i++)
                     <div class="col seme-sm">
                         <img src="{{ asset('/icons/seme 2.svg') }}" class="seme-sm" alt="Icona Seme Crop">
                     </div>

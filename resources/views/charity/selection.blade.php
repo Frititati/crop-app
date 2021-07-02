@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-        Scan QR Crop
+        Menù Realtà Sostenibili
 @endsection
 
 @section('content')

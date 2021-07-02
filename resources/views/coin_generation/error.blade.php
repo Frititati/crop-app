@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    Errore QR Crops
+    Errore QR
 @endsection
 
 @section('content')
