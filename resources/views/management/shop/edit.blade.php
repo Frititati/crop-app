@@ -154,6 +154,25 @@
 							</div>
 						</td>
 					</tr>
+					<tr>
+						<th>
+							Is Active
+						</th>
+						<td>
+							<div class="field">
+								<div class="control is-expanded">
+									<select class="input" name="is_active">
+										<option value="1" {{ $shop->is_active ? "selected" : "" }}>
+											Yes
+										</option>
+										<option value="0" {{ !$shop->is_active ? "selected" : "" }}>
+											No
+										</option>
+									</select>
+								</div>
+							</div>
+						</td>
+					</tr>
 				</table>
 				<div class="field">
 					<div class="control is-centered">
