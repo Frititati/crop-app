@@ -16,7 +16,6 @@
 
     <script src="{{ asset('js/leaflet.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}">
-    <!-- <script src="{{ asset('js/negozi.js') }}"></script> -->
     <script src="{{asset('js/cropMAP.js')}}"></script>
     <!-- <script>
         var options = {

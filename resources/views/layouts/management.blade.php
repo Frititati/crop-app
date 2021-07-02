@@ -28,7 +28,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
 
             <div class="navbar-brand">
-                <a class="navbar-item" href="/">
+                <a class="navbar-item" href="/management">
                     <img src="{{ asset('icons/crop-logo.png') }}">
                 </a>
 

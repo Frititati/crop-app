@@ -18,7 +18,7 @@ class ShopViewController extends Controller
 
     public function index()
     {
-        $shops = Shop::all();
+        $shops = Shop::where('is_active', true)->get();
         return view('shop.map', compact('shops'));
     }
 
