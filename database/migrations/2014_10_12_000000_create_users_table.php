@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('photo_path')->nullable();
             $table->rememberToken();
             $table->boolean('is_active')->default(true);
+            $table->timestamp('viewed_help')->nullable();
             $table->timestamps();
         });
     }

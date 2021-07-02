@@ -20,7 +20,8 @@ class User extends Authenticatable
         'password',
         'portfolio_id',
         'photo_path',
-        'is_active'
+        'is_active',
+        'viewed_help',
     ];
 
     protected $hidden = [

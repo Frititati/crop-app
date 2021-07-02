@@ -24,6 +24,10 @@ class UserDashboardController extends Controller
 
         $user = Auth::user();
 
+        if (!$user->viewed_help) {
+            return redirect('/user_help');
+        }
+
         $coins = Auth::user()->coin;
 
         // calculate coin totals 
