@@ -42,6 +42,7 @@
                 @csrf
 
                 <div class="input-group-container mb-2">
+
                     <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -51,6 +52,7 @@
                                 aria-describedby="email-logo" name="email" required>
                         </div>
                     </div>
+
                     <div class="d-flex flex-row input-group-login bg-color-crop-white px-4">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -62,14 +64,18 @@
                     </div>
 
                 </div>
+
                 <div class="d-flex flex-row justify-content-end mb-3">
                     <a href="/login">
                         <p class="text-color-crop-white mb-0">Password dimenticata?</p>
                     </a>
                 </div>
+
                 <div class="d-flex flex-row justify-content-center">
                     <button type="submit" class="btn btn-yellow-crop py-2" value="Accedi">Accedi</button>
                 </div>
+
+                <input type="hidden" name="remember" value="1">
             </form>
 
         <!--<div class="d-flex flex-row justify-content-center footer-login">
