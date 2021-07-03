@@ -23,4 +23,5 @@ public_html/hot
 /.vagrant
 
 composer.phar
+#Php Storm
 /.idea/

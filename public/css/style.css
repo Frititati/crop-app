@@ -613,3 +613,25 @@ a.negozio-links {
 #fade-in-div .row:nth-child(20) {
     animation-delay: 1.5s;
 }*/
+
+/* ######################################## */
+
+/* USER EDIT PAGE */
+
+div.input-group-user-edit {
+    border-right: var(--crop-green) 1px solid;
+    border-left: var(--crop-green) 1px solid;
+    filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.161));
+
+}
+
+div.input-group-user-edit:first-of-type {
+    border-radius: 1.8rem 1.8rem 0 0;
+    border-top: var(--crop-green) 1px solid;
+
+}
+
+div.input-group-user-edit:last-of-type {
+    border-radius: 0 0 1.8rem 1.8rem;
+    border-bottom: var(--crop-green) 1px solid;
+}
