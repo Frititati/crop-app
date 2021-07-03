@@ -1,48 +1,40 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.crop_base_phone')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('title')
+    Reset Password
+@endsection
 
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
+@section('content')
+    <div class="container-fluid ui d-flex flex-column justify-content-center px-4">
 
-            <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+        <!-- FORM 2 -->
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+        <div class="d-flex justify-content-start">
+            <h5 class="font-weight-bold">Modifica la password</h5>
+        </div>
+        <div class="input-group-container mb-2">
+            <div class="d-flex flex-row input-group-user-edit bg-color-crop-white px-4">
+                <div class="input-group">
+                    <input type="password" class="form-control text-input-login" placeholder="Vecchia password..."
+                           aria-describedby="vecchia-password" required>
+                </div>
+            </div>
+            <div class="d-flex flex-row input-group-user-edit bg-color-crop-white px-4">
+                <div class="input-group">
+                    <input type="password" class="form-control text-input-login" placeholder="Nuova password..."
+                           aria-describedby="nuova-password" required>
+                </div>
             </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
+            <div class="d-flex flex-row input-group-user-edit bg-color-crop-white px-4">
+                <div class="input-group">
+                    <input type="password" class="form-control text-input-login" placeholder="Conferma nuova password..."
+                           aria-describedby="conferma-nuova-password" required>
+                </div>
             </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <input type="submit" class="btn btn-yellow-crop" value="Modifica Password"/>
+        </div>
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@endsection

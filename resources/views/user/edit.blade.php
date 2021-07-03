@@ -12,13 +12,13 @@
         <div class="input-group-container mb-2">
             <div class="d-flex flex-row input-group-user-edit bg-color-crop-white px-4">
                 <div class="input-group">
-                    <input type="email" class="form-control text-input-login" placeholder="Email..." value="augusto.colongo@gmail.com"
+                    <input type="email" class="form-control text-input-login" placeholder="Email..." value="{{$user->email}}"
                            aria-describedby="email-logo" required>
                 </div>
             </div>
             <div class="d-flex flex-row input-group-user-edit bg-color-crop-white px-4">
                 <div class="input-group">
-                    <input type="text" class="form-control text-input-login" placeholder="Username..." value="augustorino"
+                    <input type="text" class="form-control text-input-login" placeholder="Username..." value="{{$user->username}}"
                            aria-describedby="username" required>
                 </div>
             </div>
@@ -27,19 +27,19 @@
         <div class="input-group-container mb-2">
             <div class="d-flex flex-row input-group-user-edit bg-color-crop-white px-4">
                 <div class="input-group">
-                    <input type="text" class="form-control text-input-login" placeholder="Nome..." value="Augusto"
+                    <input type="text" class="form-control text-input-login" placeholder="Nome..." value="{{$user->name}}"
                            aria-describedby="name" required>
                 </div>
             </div>
             <div class="d-flex flex-row input-group-user-edit bg-color-crop-white px-4">
                 <div class="input-group">
-                    <input type="text" class="form-control text-input-login" placeholder="Cognome..." value="Colongo"
+                    <input type="text" class="form-control text-input-login" placeholder="Cognome..." value="{{$user->surname}}"
                            aria-describedby="surname" required>
                 </div>
             </div>
         </div>
         <div class="d-flex flex-row justify-content-center mb-5">
-            <input type="submit" class="btn btn-yellow-crop" value="Modifica"></input>
+            <input type="submit" class="btn btn-yellow-crop" value="Modifica"/>
         </div>
 
         <!-- FORM 2 -->
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="d-flex flex-row justify-content-center">
-            <input type="submit" class="btn btn-yellow-crop" value="Modifica Password"></input>
+            <input type="submit" class="btn btn-yellow-crop" value="Modifica Password"/>
         </div>
 
 @endsection
