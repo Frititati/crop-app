@@ -19,6 +19,10 @@
         </svg>
     </div>
 
+    <form id="log_out_form" method="POST" action="/logout">
+        @csrf
+    </form>
+
     <!-- UI -->
     <div class="row">
         <!-- Profile Pill-->
@@ -30,7 +34,16 @@
             <div class="col-9">
                 <h6 class="font-weight-bold mb-1">{{ $user->name }}</h6>
                 <p class="font-weight-light description-text">
-                    <br><br><br>
+                    <br>
+                    <a href="/user_setting" class="font-weight-bold text-color-crop-green">
+                        Modifica informazioni Personali
+                    </a>
+                    <br>
+                    <br>
+
+                    <a class="font-weight-bold text-color-crop-green" onclick="document.getElementById('log_out_form').submit();">
+                        Logout
+                    </a>
                 </p>
             </div>
         </div>

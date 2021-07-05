@@ -17,6 +17,48 @@
     </head>
     <body>
 
+        @if($errors->any())
+            <div id="generic_error" class="notification is-error">
+                {{$errors->first()}}
+            </div>
+
+            <script type="text/javascript">
+                setTimeout(genericClearMessage, 20000);
+                function genericClearMessage() {
+                    document.getElementById('generic_error').style.display = "none";
+                }
+            </script>
+        @endif
+
+        <!-- don't know if this is actually necessary -->
+        @if(session()->has('error'))
+            <!-- <div id="generic_error" class="notification is-error">
+                {{session()->get('error')}}
+            </div>
+
+            <script type="text/javascript">
+                setTimeout(genericClearMessage, 20000);
+                function genericClearMessage() {
+                    document.getElementById('generic_error').style.display = "none";
+                }
+            </script> -->
+        @endif
+
+        @if(session()->has('message'))
+            <div id="return_message" class="notification is-success">
+                {{ session()->get('message') }}
+            </div>
+            <script type="text/javascript">
+                setTimeout(clearMessage, 20000);
+                function clearMessage() {
+                    document.getElementById('return_message').style.display = "none";
+                }
+            </script>
+            @php
+                session()->forget('message');
+            @endphp
+        @endif
+
         <!-- starting div is inside the content folder -->
             @yield('content')
 

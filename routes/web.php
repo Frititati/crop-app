@@ -51,4 +51,6 @@ Route::resource('management', 'App\Http\Controllers\Management\GeneralController
 Route::get('/el', 'App\Http\Controllers\Link\LinkController@externalLinkDefault');
 Route::get('/el/{code}', 'App\Http\Controllers\Link\LinkController@externalLink');
 
+Route::resource('user_setting', 'App\Http\Controllers\User\UserSettingController');
+
 require __DIR__.'/auth.php';
