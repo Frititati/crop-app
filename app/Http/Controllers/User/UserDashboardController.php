@@ -41,7 +41,7 @@ class UserDashboardController extends Controller
         // calculate weekly produced coins
         $coins_weekly = $coins->whereBetween('created_at', [$start, $end])->count();
 
-        return view('user.dashboard', compact('coins_weekly', 'coins_total'));
+        return view('user.dashboard', compact('user', 'coins_weekly', 'coins_total'));
     }
 
     public function create()

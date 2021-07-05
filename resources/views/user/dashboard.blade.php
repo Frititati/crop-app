@@ -28,7 +28,7 @@
                 <!-- <img src="{{ asset('icons/gear.svg') }}" class="icon-gear"> -->
             </div>
             <div class="col-9">
-                <h6 class="font-weight-bold mb-1">{{ Auth::user()->name }}</h6>
+                <h6 class="font-weight-bold mb-1">{{ $user->name }}</h6>
                 <p class="font-weight-light description-text">
                     <br><br><br>
                 </p>
@@ -66,10 +66,10 @@
         </div>
     </div>
 
-    @if(Auth::user()->portfolio)
+    @if($user->portfolio)
         <!-- CHART -->
         <div class="row justify-content-center mx-5">
-            <p class="text-large mb-2 text-center">Portfolio: <b>{{ Auth::user()->portfolio->name }}</b></p>
+            <p class="text-large mb-2 text-center">Portfolio: <b>{{ $user->portfolio->name }}</b></p>
             <canvas id="portfolio_distribution" class="doughnut-chart"></canvas>
         </div>
 
@@ -85,14 +85,14 @@
             function loadPortfolioGraph() {
                 const dataPortfolio = {
                     labels: [
-                        @foreach(Auth::user()->portfolio->division as $division)
+                        @foreach($user->portfolio->division as $division)
                             @json($division->charity->name),
                         @endforeach
                     ],
                     datasets: [{
                         label: 'PortFolio',
                         data: [
-                            @foreach(Auth::user()->portfolio->division as $division)
+                            @foreach($user->portfolio->division as $division)
                                 {{ $division->share }},
                             @endforeach
                         ],
