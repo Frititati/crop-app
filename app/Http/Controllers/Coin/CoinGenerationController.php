@@ -59,8 +59,15 @@ class CoinGenerationController extends Controller
             "qr_code" => ["required"]
         ]);
 
+        $qr_code = "";
+
         // decrypt qr_code
-        $qr_code = Crypt::decryptString($validated['qr_code']);
+        try {
+            $qr_code = Crypt::decryptString($validated['qr_code']);
+        } catch (DecryptException $e) {
+            $message = "QR non corretto, riprovare grazie.";
+            return view('coin_generation.error', compact('message'));
+        }
         // $qr_code = $validated['qr_code'];
 
         $generation = CoinGeneration::where('code', $qr_code)->first();
