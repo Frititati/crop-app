@@ -7,6 +7,7 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
+use App\Notifications\PasswordResetNotification;
 
 class User extends Authenticatable implements CanResetPassword
 {
@@ -43,5 +44,10 @@ class User extends Authenticatable implements CanResetPassword
     public function coin()
     {
         return $this->hasMany(Coin\Coin::class, 'user_id');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordResetNotification($token));
     }
 }
