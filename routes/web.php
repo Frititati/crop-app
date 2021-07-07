@@ -53,4 +53,6 @@ Route::get('/el/{code}', 'App\Http\Controllers\Link\LinkController@externalLink'
 
 Route::resource('user_setting', 'App\Http\Controllers\User\UserSettingController');
 
+Route::get('privacy_policy', 'App\Http\Controllers\User\PrivacyPolicyController@index')->name('privacy_policy');
+
 require __DIR__.'/auth.php';
