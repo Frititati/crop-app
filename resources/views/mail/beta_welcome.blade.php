@@ -75,38 +75,38 @@
          }
       </style>
    </head>
-   <body class="" style="font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;" bgcolor="#f6f6f6">
-      <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">
+   <body class="" style="font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+      <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; visibility: hidden; width: 0;">
         Benvenuto alla Beta di Crop!
         <br>
       </span>
-      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" bgcolor="#f6f6f6">
+      <table role="presentation" class="body" style="border-collapse: separate; width: 100%;">
          <tr>
-            <td style="font-family: 'Poppins', sans-serif; font-size: 14px;" valign="top"> </td>
-            <td class="container" style="font-family: 'Poppins', sans-serif; font-size: 14px; display: block; max-width: 580px; width: 580px; margin: 0 auto; padding: 10px;" valign="top">
+            <td style="font-family: 'Poppins', sans-serif; font-size: 14px;"> </td>
+            <td class="container" style="font-family: 'Poppins', sans-serif; font-size: 14px; display: block; max-width: 580px; width: 580px; margin: 0 auto; padding: 10px;">
                <div class="content" style="box-sizing: border-box; display: block; max-width: 580px; margin: 0 auto; padding: 10px;">
                   <!-- START CENTERED WHITE CONTAINER -->
-                  <table role="presentation" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-radius: 3px;" bgcolor="#ffffff">
+                  <table role="presentation" class="main" style="border-collapse: separate; width: 100%; border-radius: 3px;">
                      <!-- START MAIN CONTENT AREA -->
                      <tr>
-                        <td class="wrapper" style="font-family: 'Poppins', sans-serif; font-size: 14px; box-sizing: border-box; padding: 20px;" valign="top">
-                           <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                        <td class="wrapper" style="font-family: 'Poppins', sans-serif; font-size: 14px; box-sizing: border-box; padding: 20px;">
+                           <table role="presentation" style="border-collapse: separate; width: 100%;">
                               <tr>
-                                 <td style="font-family: 'Poppins', sans-serif; font-size: 14px;" valign="top">
-                                    <img src="{{ asset('images/crop_log_big_green_writing.png') }}" style="-ms-interpolation-mode: bicubic; max-width: 300px; border: none;">
+                                 <td style="font-family: 'Poppins', sans-serif; font-size: 14px;">
+                                    <img src="{{ asset('images/crop_log_big_green_writing.png') }}" style="-ms-interpolation-mode: bicubic; max-width: 300px; border: none;" alt="Crop Logo">
                                     <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;"><br>Ciao {{ $user->name }} {{ $user->surname }},</p>
                                     <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Grazie mille per aver deciso di partecipare alla Beta privata di Crop!
                                     </p>
                                     <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Quello di oggi è il primo passo verso il nostro obiettivo: sfruttare l'innovazione tecnologica per rendere la sostenibilità accessibile a tutti.</p>
                                     <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Prima di iniziare, devi creare una password per accedere alla piattaforma.</p>
-                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
+                                    <table role="presentation" class="btn btn-primary" style="border-collapse: separate; width: 100%; box-sizing: border-box;">
                                        <tbody>
                                           <tr>
-                                             <td align="left" style="font-family: 'Poppins', sans-serif; font-size: 14px; padding-bottom: 15px;" valign="top">
-                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
+                                             <td style="font-family: 'Poppins', sans-serif; font-size: 14px; padding-bottom: 15px;">
+                                                <table role="presentation" style="border-collapse: separate; width: auto;">
                                                    <tbody>
                                                       <tr>
-                                                         <td style="font-family: 'Poppins', sans-serif; font-size: 14px; border-radius: 5px;" align="center" bgcolor="#ffffff" valign="top"> <a href="{{ env('APP_URL').'/reset-password/'.$token.'?email='.$user->email }}" target="_blank" style="color: rgb(70, 161, 126); text-decoration: none; background-color: rgb(246, 219, 100); border-radius: 9999px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 14px; font-weight: 600; text-transform: capitalize; margin: 0; padding: .75rem 1.5rem;">Crea una password</a> </td>
+                                                         <td style="font-family: 'Poppins', sans-serif; font-size: 14px; border-radius: 5px;"> <a href="{{ 'https://app.cropapp.it/reset-password/'.$token.'?email='.$user->email }}" target="_blank" style="color: rgb(70, 161, 126); text-decoration: none; background-color: rgb(246, 219, 100); border-radius: 9999px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 14px; font-weight: 600; text-transform: capitalize; margin: 0; padding: .75rem 1.5rem;">Crea una password</a> </td>
                                                       </tr>
                                                    </tbody>
                                                 </table>
@@ -126,16 +126,16 @@
                   </table>
                   <!-- END CENTERED WHITE CONTAINER -->
                   <!-- START FOOTER -->
-                  <div class="footer" style="clear: both; margin-top: 10px; width: 100%;" align="center">
-                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                  <div class="footer" style="clear: both; margin-top: 10px; width: 100%;">
+                     <table role="presentation" style="border-collapse: separate; width: 100%;">
                         <tr>
-                           <td class="content-block" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999;" align="center" valign="top">
+                           <td class="content-block" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999;">
                               <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">Crop - Reconciling Humans with Nature</span>
                               <br><a href="https://www.cropapp.it" style="color: #999999; font-size: 12px; text-align: center; text-decoration: underline;">www.cropapp.it</a>.
                            </td>
                         </tr>
                         <tr>
-                           <td class="content-block powered-by" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999;" align="center" valign="top">
+                           <td class="content-block powered-by" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999;">
                               Powered by <a href="http://htmlemail.io" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">HTMLemail</a>.
                            </td>
                         </tr>
@@ -144,7 +144,7 @@
                   <!-- END FOOTER -->
                </div>
             </td>
-            <td style="font-family: 'Poppins', sans-serif; font-size: 14px;" valign="top"> </td>
+            <td style="font-family: 'Poppins', sans-serif; font-size: 14px;"> </td>
          </tr>
       </table>
    </body>
