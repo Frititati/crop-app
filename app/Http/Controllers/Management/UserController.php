@@ -149,4 +149,10 @@ class UserController extends Controller
     {
         abort(500, 'Unavailable Action.');
     }
+
+    // public function test()
+    // {
+    //     $token = "asdfkjlajsdf";
+    //     return view('mail.password_reset', compact('token'));
+    // }
 }

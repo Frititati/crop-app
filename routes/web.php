@@ -55,4 +55,6 @@ Route::resource('user_setting', 'App\Http\Controllers\User\UserSettingController
 
 Route::get('privacy_policy', 'App\Http\Controllers\User\PrivacyPolicyController@index')->name('privacy_policy');
 
+// Route::get('test', 'App\Http\Controllers\Management\UserController@test');
+
 require __DIR__.'/auth.php';
