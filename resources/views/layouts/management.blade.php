@@ -204,6 +204,18 @@
                 @endphp
             @endif
 
+            @if(session('status'))
+                <div id="return_message" class="notification is-success">
+                    {{ session('status') }}
+                </div>
+                <script type="text/javascript">
+                    setTimeout(clearMessage, 10000);
+                    function clearMessage() {
+                        document.getElementById('return_message').style.display = "none";
+                    }
+                </script>
+            @endif
+
             @yield('content')
 
         </section>

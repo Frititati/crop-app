@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Mail;
 use Hash;
 use Session;
 
 use App\Models\User;
+use App\Mail\BetaWelcomeMail;
 
 class UserController extends Controller
 {
@@ -112,6 +114,28 @@ class UserController extends Controller
                 $user->save();
 
                 Session::flash('message', 'You changed the User\'s Password!');
+            }
+
+            // this is really important code that should be super secured
+            // but it is not ¯\_(ツ)_/¯
+            if ($request->get('action') == "send_beta_welcome_email") {
+
+                $token = Password::createToken($user);
+
+                Mail::to($user)->send(new BetaWelcomeMail($user, $token));
+
+                Session::flash('message', 'The email should have been sent .... :D');
+            }
+
+            if ($request->get('action') == "reset_user_password_email") {
+
+                $status = Password::sendResetLink(
+                    ['email' => $user->email]
+                );
+
+                return $status === Password::RESET_LINK_SENT
+                    ? back()->with(['status' => __($status)])
+                    : back()->withErrors(['email' => __($status)]);
             }
 
         } else {

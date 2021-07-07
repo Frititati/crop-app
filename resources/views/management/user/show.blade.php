@@ -83,6 +83,34 @@
 
 <div class="box">
     <h1 class="title is-4">
+        Possible actions
+    </h1>
+    <div class="columns">
+        <div class="column is-2">
+            <form action="/user/manage/{{ $user->id }}" method="POST">
+                @csrf
+                @method('PATCH')
+                <button type="submit" class="button is-primary">
+                    Send Welcome Email
+                </button>
+                <input type="hidden" name="action" value="send_beta_welcome_email">
+            </form>
+        </div>
+        <div class="column is-2">
+            <form action="/user/manage/{{ $user->id }}" method="POST">
+                @csrf
+                @method('PATCH')
+                <button type="submit" class="button is-primary">
+                    Send Reset Password Email
+                </button>
+                <input type="hidden" name="action" value="reset_user_password_email">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <h1 class="title is-4">
         Coins Associated
     </h1>
     <table class="table is-fullwidth is-bordered">
