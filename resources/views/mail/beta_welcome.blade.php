@@ -94,7 +94,7 @@
                               <tr>
                                  <td style="font-family: 'Poppins', sans-serif; font-size: 14px;">
                                     <img src="{{ asset('images/crop_log_big_green_writing.png') }}" style="-ms-interpolation-mode: bicubic; max-width: 300px; border: none;" alt="Crop Logo">
-                                    <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;"><br>Ciao {{ $user->name }} {{ $user->surname }},</p>
+                                    <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;"><br>Ciao {{ $user->name }},</p>
                                     <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Grazie mille per aver deciso di partecipare alla Beta privata di Crop!
                                     </p>
                                     <p style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: normal; margin: 0 0 15px;">Quello di oggi è il primo passo verso il nostro obiettivo: sfruttare l'innovazione tecnologica per rendere la sostenibilità accessibile a tutti.</p>
