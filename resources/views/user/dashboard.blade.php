@@ -34,14 +34,10 @@
             <div class="col-9">
                 <h6 class="font-weight-bold mb-1">{{ $user->name }}</h6>
                 <p class="font-weight-light description-text">
-                    <br>
-                    <a href="/user_setting" class="font-weight-bold text-color-crop-green">
+                    <a href="/user_setting" class="btn btn-link text-color-crop-green btn-sm">
                         Modifica informazioni Personali
                     </a>
-                    <br>
-                    <br>
-
-                    <a class="font-weight-bold text-color-crop-green" onclick="document.getElementById('log_out_form').submit();">
+                    <a href="#" class="btn btn-link text-color-crop-green btn-sm" onclick="document.getElementById('log_out_form').submit();">
                         Logout
                     </a>
                 </p>
