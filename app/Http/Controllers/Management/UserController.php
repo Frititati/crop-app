@@ -36,7 +36,7 @@ class UserController extends Controller
             'name' => ['required', 'min:4'],
             'surname' => ['required', 'min:4'],
             'username' => ['required', 'min:4'],
-            'email' => ['required', 'min:4'],
+            'email' => ['required', 'email'],
         ]);
 
         $validated["is_active"] = True;
@@ -82,7 +82,7 @@ class UserController extends Controller
                     'name' => ['required', 'min:4'],
                     'surname' => ['required', 'min:4'],
                     'username' => ['required', 'min:4'],
-                    'email' => ['required', 'min:4'],
+                    'email' => ['required', 'email'],
                     'is_active' => ['required', 'boolean']
                 ]);
 

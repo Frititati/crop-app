@@ -37,7 +37,7 @@ class UserSettingController extends Controller
                     'name' => ['required', 'min:4'],
                     'surname' => ['required', 'min:4'],
                     'username' => ['required', 'min:4'],
-                    'email' => ['required', 'min:4'],
+                    'email' => ['required', 'email'],
                 ]);
 
                 $user->update($validated);

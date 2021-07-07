@@ -20,14 +20,18 @@
 
 <body>
 
-<!-- <div class="svg-background">
-            <svg class="ellisse bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="593" height="593" viewBox="0 0 593 593">
-                <circle cx="287.5" cy="287.5" r="287.5" />
-            </svg>
-        </div> -->
+    @if($errors->any())
+        <div id="generic_error" class="notification is-error">
+            {{$errors->first()}}
+        </div>
 
-
+        <script type="text/javascript">
+            setTimeout(genericClearMessage, 20000);
+            function genericClearMessage() {
+                document.getElementById('generic_error').style.display = "none";
+            }
+        </script>
+    @endif
 
     <!-- Application container -->
     <div class="container-fluid login d-flex flex-column justify-content-center px-5">
@@ -48,8 +52,7 @@
                             <div class="input-group-prepend">
                                 <img id="email-logo" src="{{ asset('icons/email.svg') }}" alt="Email icon">
                             </div>
-                            <input type="email" class="form-control text-input-login ml-2" placeholder="Email..."
-                                aria-describedby="email-logo" name="email" required>
+                            <input type="email" class="form-control text-input-login ml-2" placeholder="Email..." aria-describedby="email-logo" name="email" required>
                         </div>
                     </div>
 
@@ -58,15 +61,14 @@
                             <div class="input-group-prepend">
                                 <img id="password-logo" src="{{ asset('icons/password.svg') }}" alt="Password logo">
                             </div>
-                            <input type="password" name="password" class="form-control text-input-login ml-2" placeholder="Password..."
-                                aria-describedby="password-logo" required autocomplete="current-password">
+                            <input type="password" name="password" class="form-control text-input-login ml-2" placeholder="Password..." aria-describedby="password-logo" required autocomplete="current-password">
                         </div>
                     </div>
 
                 </div>
 
                 <div class="d-flex flex-row justify-content-end mb-3">
-                    <a href="/login">
+                    <a href="/forgot-password">
                         <p class="text-color-crop-white mb-0">Password dimenticata?</p>
                     </a>
                 </div>
