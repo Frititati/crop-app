@@ -11,7 +11,7 @@ class PasswordResetMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $token;
+    public $token;
 
     public function __construct($in_token)
     {
@@ -20,7 +20,8 @@ class PasswordResetMail extends Mailable
 
     public function build()
     {
-        return $this->from('info@mail.cropapp.it')
+        return $this->from('support@mail.cropapp.it')
+                    ->subject('Crop Reset Password')
                     ->view('mail.password_reset');
     }
 }
