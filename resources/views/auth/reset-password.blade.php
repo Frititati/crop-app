@@ -65,7 +65,11 @@
             <div class="d-flex flex-row justify-content-center">
                 <div class="form-check">
                     <input type="checkbox" id="privacy_check_checkbox" name="privacy_check" class="form-check-input" required/>
-                    <label for="privacy_check_checkbox" class="form-check-label">Do you agree with the terms and conditions</label>
+                    <label for="privacy_check_checkbox" class="form-check-label">Hai letto la 
+                        <a href="/privacy_policy">
+                            Privacy Policy?
+                        </a>
+                    </label>
                 </div>
             </div>
             
