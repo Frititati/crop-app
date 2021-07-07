@@ -75,7 +75,7 @@
          }
       </style>
    </head>
-   <body class="" style="font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+   <body class="" style="font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0; background-color: #f6f6f6">
       <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; visibility: hidden; width: 0;">
         Benvenuto alla Beta di Crop!
         <br>
@@ -86,7 +86,7 @@
             <td class="container" style="font-family: 'Poppins', sans-serif; font-size: 14px; display: block; max-width: 580px; width: 580px; margin: 0 auto; padding: 10px;">
                <div class="content" style="box-sizing: border-box; display: block; max-width: 580px; margin: 0 auto; padding: 10px;">
                   <!-- START CENTERED WHITE CONTAINER -->
-                  <table role="presentation" class="main" style="border-collapse: separate; width: 100%; border-radius: 3px;">
+                  <table role="presentation" class="main" style="border-collapse: separate; width: 100%; border-radius: 3px; background-color: #ffffff">
                      <!-- START MAIN CONTENT AREA -->
                      <tr>
                         <td class="wrapper" style="font-family: 'Poppins', sans-serif; font-size: 14px; box-sizing: border-box; padding: 20px;">
@@ -126,16 +126,16 @@
                   </table>
                   <!-- END CENTERED WHITE CONTAINER -->
                   <!-- START FOOTER -->
-                  <div class="footer" style="clear: both; margin-top: 10px; width: 100%;">
+                  <div class="footer" style="clear: both; margin-top: 10px; width: 100%; text-align: center" >
                      <table role="presentation" style="border-collapse: separate; width: 100%;">
                         <tr>
-                           <td class="content-block" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999;">
+                           <td class="content-block" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999; text-align: center">
                               <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">Crop - Reconciling Humans with Nature</span>
                               <br><a href="https://www.cropapp.it" style="color: #999999; font-size: 12px; text-align: center; text-decoration: underline;">www.cropapp.it</a>.
                            </td>
                         </tr>
                         <tr>
-                           <td class="content-block powered-by" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999;">
+                           <td class="content-block powered-by" style="font-family: 'Poppins', sans-serif; font-size: 12px; padding-bottom: 10px; padding-top: 10px; color: #999999; text-align: center">
                               Powered by <a href="http://htmlemail.io" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">HTMLemail</a>.
                            </td>
                         </tr>
