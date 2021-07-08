@@ -47,7 +47,7 @@
 						<td>
 							<div class="field">
 								<div class="control is-expanded">
-									<input class="input" type="text" placeholder="Username" name="username" minlength="4" required>
+									<input class="input" type="text" placeholder="Username" name="username" minlength="4">
 								</div>
 							</div>
 						</td>
