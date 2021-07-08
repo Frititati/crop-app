@@ -38,7 +38,7 @@ class UserController extends Controller
             'name' => ['required', 'min:4'],
             'surname' => ['required', 'min:4'],
             'username' => [],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:App\Models\User,email'],
         ]);
 
         $validated["is_active"] = True;
