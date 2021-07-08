@@ -37,7 +37,7 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'min:4'],
             'surname' => ['required', 'min:4'],
-            'username' => ['required', 'min:4'],
+            'username' => [],
             'email' => ['required', 'email'],
         ]);
 
@@ -83,7 +83,7 @@ class UserController extends Controller
                 $validated = $request->validate([
                     'name' => ['required', 'min:4'],
                     'surname' => ['required', 'min:4'],
-                    'username' => ['required', 'min:4'],
+                    'username' => [],
                     'email' => ['required', 'email'],
                     'is_active' => ['required', 'boolean']
                 ]);
