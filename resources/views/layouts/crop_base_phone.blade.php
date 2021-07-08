@@ -11,9 +11,15 @@
 
         <title>Crop - @yield('title')</title>
 
+        <!-- APPLE WEB APP -->
         <meta name="apple-mobile-web-app-title" content="Crop">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon" href="{{ asset('icons/crop-logo-white-bg.png') }}">
+
+        <!-- ANDROID WEB APP
+        <link rel="manifest" href="{{ asset('js/manifest.json') }}" crossorigin="use-credentials"> -->
+
     </head>
     <body>
 
