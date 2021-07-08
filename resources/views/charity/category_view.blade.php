@@ -17,18 +17,27 @@
 
     <!-- Lista realtà-->
     <!-- element -->
-    @foreach($charities as $charity)
-        <div class="row realta-list-element mx-1 my-2">
-            <div class="d-flex flex-column col-4 justify-content-center px-1">
-                <div><img src="{{ asset('images/'.($charity->photo_path ?? "")) }}" class="w-100"></div>
+        @forelse($charities as $charity)
+            <div class="row realta-list-element mx-1 my-2">
+                <div class="d-flex flex-column col-4 justify-content-center px-1">
+                    <div><img src="{{ asset('images/'.($charity->photo_path ?? "")) }}" class="w-100"></div>
+                </div>
+                <div class="d-flex flex-column col-8 pr-0">
+                    <h6><b>{{ $charity->name }}</b></h6>
+                    <p class="justify-text">
+                        {{ $charity->description }}
+                    </p>
+                </div>
             </div>
-            <div class="d-flex flex-column col-8 pr-0">
-                <h6><b>{{ $charity->name }}</b></h6>
-                <p class="justify-text">
-                    {{ $charity->description }}
-                </p>
+        @empty
+            <div class="row realta-list-element mx-1 my-2">
+                <div class="d-flex flex-column col-12 pr-0">
+                    <p>
+                        Al momento non sono presenti realtà sostenibili in questa categoria.
+                    </p>
+                </div>
             </div>
-        </div>
-    @endforeach
+        @endforelse
+
 
 @endsection
