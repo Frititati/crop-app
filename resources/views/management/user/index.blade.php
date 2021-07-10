@@ -30,6 +30,9 @@
 					Is Active
 				</th>
 				<th>
+					Remember Token
+				</th>
+				<th>
 					Email
 				</th>
 			</tr>
@@ -56,6 +59,15 @@
 					<td>
 						{{ $item->is_active ? "Yes" : "No" }}
 					</td>
+					@if($item->remember_token)
+						<td>
+							Yes
+						</td>
+					@else
+						<td style="color: red;">
+							No
+						</td>
+					@endif
 					<td>
 						{{ $item->email ?? "-" }}
 					</td>

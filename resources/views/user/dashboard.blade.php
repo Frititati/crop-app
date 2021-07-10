@@ -40,6 +40,11 @@
                     <a href="#" class="btn btn-link text-color-crop-green btn-sm" onclick="document.getElementById('log_out_form').submit();">
                         Logout
                     </a>
+                    @can('is_management')
+                        <a href="/management" class="btn btn-link text-color-crop-green btn-sm">
+                            Management
+                        </a>
+                    @endcan
                 </p>
             </div>
         </div>
