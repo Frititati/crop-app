@@ -51,16 +51,18 @@
     </div>
 
     <!-- COIN PILLS -->
-    <div class="row coin-pill-row text-white">
+    <div class="row coin-pill-row">
         <div class="col">
             <div class="rounded-circle coin-pill left">
                 <div class="col">
                     <div class="row center-text">
-                        <h5 class="mb-0 font-weight-bold">{{ $coins_weekly }}</h5>
+                        <h5 class="mb-0 font-weight-bold">75</h5>
                         <img src="{{ asset('icons/seme 1.svg') }}" class="seme-icon-text">
                     </div>
                     <div class="row center-text">
-                        <p class="mb-0">questa settimana</p>
+                        <p class="mb-0">
+                            min 100 da spedire
+                        </p>
                     </div>
                 </div>
             </div>
@@ -69,11 +71,11 @@
             <div class="rounded-circle coin-pill right">
                 <div class="col center-text">
                     <div class="row center-text">
-                        <h5 class="mb-0 font-weight-bold">{{ $coins_total }}</h5>
+                        <h5 class="mb-0 font-weight-bold">0</h5>
                         <img src="{{ asset('icons/seme 1.svg') }}" class="seme-icon-text">
                     </div>
                     <div class="row center-text">
-                        <p class="mb-0">totali</p>
+                        <p class="mb-0">spediti</p>
                     </div>
                 </div>
             </div>

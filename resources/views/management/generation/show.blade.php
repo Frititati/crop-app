@@ -157,7 +157,7 @@
                         {{ $coin->id }}
                     </td>
                     <td>
-                        {{ $coin->user->name }}
+                        {{ $coin->user->username }}
                     </td>
                     <td>
                         {{ $coin->group ?? "" }}
