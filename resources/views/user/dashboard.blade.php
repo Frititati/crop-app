@@ -13,10 +13,9 @@
             <ellipse id="ellisse-top-left" rx="193.5" ry="184.5" cx="193.5" cy="184.5">
             </ellipse>
         </svg>
-        <svg class="ellisse bottom-right">
-            <ellipse id="ellisse-bottom-right" rx="193.5" ry="184.5" cx="193.5" cy="184.5">
-            </ellipse>
-        </svg>
+        <div class="ellisse bottom-right animated-background">
+            <img src="{{ asset('icons/crop-logo.png') }}">
+        </div>
     </div>
 
     <form id="log_out_form" method="POST" action="/logout">

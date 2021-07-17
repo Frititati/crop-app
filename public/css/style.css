@@ -275,6 +275,16 @@ img.drop-shadow {
     }
 }
 
+.ellisse.animated-background {
+    animation: rotate-background-animation 20s linear 0s infinite;
+}
+
+@keyframes rotate-background-animation {
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
 .center-text {
     justify-content: center;
     text-align: center;
