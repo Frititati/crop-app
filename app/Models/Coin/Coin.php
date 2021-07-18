@@ -15,7 +15,8 @@ class Coin extends Model
 		'user_id',
 		'shop_id',
 		'coin_generation_id',
-		'received_on'
+		'received_on',
+		'user_sent_at'
 	];
 
 	public function user()

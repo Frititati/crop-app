@@ -255,6 +255,7 @@ img.drop-shadow {
     margin-right: 15px;
 }
 
+/* depreciated */
 .coin-pill.left {
     float: left;
     margin-left: 15px;
@@ -265,6 +266,24 @@ img.drop-shadow {
     /*background-repeat: no-repeat;*/
     /*animation: pulse-send-coin-animation 4s ease-in-out 0s infinite;*/
     animation: wave-send-coin-animation 6s ease-in-out 0s infinite;
+}
+
+#pill-send-coins {
+    margin: 0;
+    background-color: var(--crop-green);
+    height: 110px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(62, 142, 111, 1);
+    float: left;
+    margin-left: 15px;
+    /*background: linear-gradient(0deg, rgba(70, 161, 126, 1) 57%, rgba(255,255,255,1) 57%);*/
+    /*background-size: 100% 110%;*/
+    /*background-image: url('http://localhost:8000/icons/test_wave2.svg');*/
+    /*animation: pulse-send-coin-animation 4s ease-in-out 0s infinite;*/
+    /*animation: wave-send-coin-animation 6s ease-in-out 0s infinite;*/
 }
 
 @keyframes pulse-send-coin-animation {

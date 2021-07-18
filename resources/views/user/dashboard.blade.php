@@ -13,6 +13,8 @@
             <ellipse id="ellisse-top-left" rx="193.5" ry="184.5" cx="193.5" cy="184.5">
             </ellipse>
         </svg>
+
+        <!-- edited to have a perfectly round logo of crop spinning -->
         <div class="crop-log-background">
             <img src="{{ asset('icons/crop-logo-circle.png') }}">
         </div>
@@ -34,7 +36,7 @@
                 <h6 class="font-weight-bold mb-1">{{ $user->name }}</h6>
                 <p class="font-weight-light description-text">
                     <a href="/user_setting" class="btn btn-link text-color-crop-green btn-sm">
-                        Modifica informazioni Personali
+                        Modifica Informazioni Personali
                     </a>
                     <a href="#" class="btn btn-link text-color-crop-green btn-sm" onclick="document.getElementById('log_out_form').submit();">
                         Logout
@@ -51,26 +53,28 @@
 
     <!-- COIN PILLS -->
     <div class="row coin-pill-row">
+
         <div class="col">
-            <div class="rounded-circle coin-pill left">
+            <div class="rounded-circle" id="pill-send-coins">
                 <div class="col">
                     <div class="row center-text">
-                        <h5 class="mb-0 font-weight-bold">75</h5>
+                        <h5 class="mb-0 font-weight-bold">{{ $count_coins_to_send }}</h5>
                         <img src="{{ asset('icons/seed-black.svg') }}" class="seme-icon-text">
                     </div>
                     <div class="row center-text">
-                        <p class="mb-0">
+                        <p class="mb-0" id="pill-send-coins-text">
                             min 100 da spedire
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="col">
             <div class="rounded-circle coin-pill right text-white">
                 <div class="col center-text">
                     <div class="row center-text">
-                        <h5 class="mb-0 font-weight-bold">0</h5>
+                        <h5 class="mb-0 font-weight-bold">{{ $count_coins_sent }}</h5>
                         <img src="{{ asset('icons/seed-white.svg') }}" class="seme-icon-text">
                     </div>
                     <div class="row center-text">
@@ -79,6 +83,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     @if($user->portfolio)
@@ -153,6 +158,88 @@
             <a href="{{ route('portfolio_selection') }}">
                 <img src="{{ asset('icons/pen.svg') }}">
             </a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // this JS is for the pill coin sending
+        
+        // this is for DOM ready
+        $( document ).ready(function() {
+        
+        @if($count_coins_to_send >= 100)
+            // this is where we can send coins
+
+            // set animation
+            $('#pill-send-coins').css("animation", "pulse-send-coin-animation 4s ease-in-out 0s infinite");
+
+            // change pill text
+            $('#pill-send-coins-text').text("da spedire");
+
+            // set on click behaviour
+            // $("#pill-send-coins").click(function() {
+            //     $('#modal-cannot-send-coins').show();
+            // });
+
+
+        @else
+            // this is where we can't send coins
+
+            // set gradient
+            $('#pill-send-coins').css("background", "linear-gradient(0deg, rgba(70, 161, 126, 1) {{ $count_coins_to_send }}%, rgba(255,255,255,1) {{ $count_coins_to_send }}%)");
+            $('#pill-send-coins').css("background-size", "100% 110%");
+            
+            // set animation
+            $('#pill-send-coins').css("animation", "wave-send-coin-animation 6s ease-in-out 0s infinite");
+
+            // change pill text
+            $('#pill-send-coins-text').text("min 100 da spedire");
+
+            // set on click behaviour
+            $("#pill-send-coins").click(function() {
+                $('#modal-cannot-send-coins').show();
+                setTimeout(function(){ $('#modal-cannot-send-coins').hide(); }, 4000);
+            });
+
+        @endif
+
+        // ends DOM ready
+        });
+
+        $('modal-cannot-send-coins').on('shown.bs.modal', function () {
+          $('#myInput').trigger('focus')
+        })
+
+        function closeModalGeneric() {
+            $('#modal-cannot-send-coins').hide();
+            $('#modal-send-coins').hide();
+        }
+
+    </script>
+
+    <div class="modal" id="modal-cannot-send-coins" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="border: 1px solid green;">
+                <div class="modal-body">
+                    <h5 class="text-black">
+                        Non si puo ancora spedire, servono 100 Coins
+                    </h5>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModalGeneric()">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-send-coins" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="border: 1px solid green;">
+                <div class="modal-body">
+                    <h5 class="text-black">
+                        Non si puo ancora spedire, servono 100 Coins
+                    </h5>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModalGeneric()">Chiudi</button>
+                </div>
+            </div>
         </div>
     </div>
 

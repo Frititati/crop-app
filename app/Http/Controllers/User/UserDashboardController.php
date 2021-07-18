@@ -28,20 +28,18 @@ class UserDashboardController extends Controller
             return redirect('/user_help');
         }
 
-        $coins = Auth::user()->coin;
+        // $start_time = microtime(true);
 
-        // calculate coin totals 
-        $coins_total = $coins->count();
+        $count_coins_to_send = Coin::where('user_id', $user->id)->whereNull('user_sent_at')->count();
+        $count_coins_sent = Coin::where('user_id', $user->id)->whereNotNull('user_sent_at')->count();
 
-        $date = Carbon::now();
-        $date->setISODate(Carbon::now()->year, Carbon::now()->weekOfYear);
-        $start = $date->startOfWeek()->toDateTimeString();
-        $end = $date->endOfWeek()->toDateTimeString();
+        $count_coins_to_send = 75;
 
-        // calculate weekly produced coins
-        $coins_weekly = $coins->whereBetween('created_at', [$start, $end])->count();
+        // $time_elapsed_secs = microtime(true) - $start_time;
 
-        return view('user.dashboard', compact('user', 'coins_weekly', 'coins_total'));
+        // dd($time_elapsed_secs, $count_coins_to_send, $count_coins_sent);
+
+        return view('user.dashboard', compact('user', 'count_coins_to_send', 'count_coins_sent'));
     }
 
     public function create()
