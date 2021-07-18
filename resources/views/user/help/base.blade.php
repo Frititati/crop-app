@@ -288,7 +288,7 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $('.fade-in-chat').each(function(fadeInDiv){
-                    $(this).delay(fadeInDiv * 500).fadeIn(500);
+                    $(this).delay(fadeInDiv * 300).fadeIn(300);
                     $(this).css("z-index", "100");
                 });
             });
