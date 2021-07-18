@@ -56,7 +56,7 @@
                 <div class="col">
                     <div class="row center-text">
                         <h5 class="mb-0 font-weight-bold">75</h5>
-                        <img src="{{ asset('icons/seme 1.svg') }}" class="seme-icon-text">
+                        <img src="{{ asset('icons/seed-black.svg') }}" class="seme-icon-text">
                     </div>
                     <div class="row center-text">
                         <p class="mb-0">
@@ -67,11 +67,11 @@
             </div>
         </div>
         <div class="col">
-            <div class="rounded-circle coin-pill right">
+            <div class="rounded-circle coin-pill right text-white">
                 <div class="col center-text">
                     <div class="row center-text">
                         <h5 class="mb-0 font-weight-bold">0</h5>
-                        <img src="{{ asset('icons/seme 1.svg') }}" class="seme-icon-text">
+                        <img src="{{ asset('icons/seed-white.svg') }}" class="seme-icon-text">
                     </div>
                     <div class="row center-text">
                         <p class="mb-0">spediti</p>

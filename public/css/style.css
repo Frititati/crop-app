@@ -241,7 +241,10 @@ img.drop-shadow {
     float: left;
     margin-left: 15px;
     background: linear-gradient(0deg, rgba(70, 161, 126, 1) 75%, rgba(255,255,255,1) 75%);
-    background-size: 110% 110%;
+    background-size: 100% 110%;
+    /*background-image: url('http://localhost:8000/icons/test_wave2.svg');*/
+    /*background-color: white;*/
+    /*background-repeat: no-repeat;*/
     /*animation: pulse-send-coin-animation 4s ease-in-out 0s infinite;*/
     animation: wave-send-coin-animation 6s ease-in-out 0s infinite;
 }
@@ -268,7 +271,7 @@ img.drop-shadow {
         background-position:0% 0%;
     }
     50% {
-        background-position:91% 100%;
+        background-position:0% 100%;
     }
     100% {
         background-position:0% 0%;
