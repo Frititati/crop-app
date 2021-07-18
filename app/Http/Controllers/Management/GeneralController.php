@@ -23,7 +23,7 @@ class GeneralController extends Controller
         // $coins = Coin::all()->sortBy('received_at');
         $coins = Coin::all()->sortBy('received_at')->values();
 
-        $temp_period = CarbonPeriod::create($coins->first()->received_at, '1 day', Carbon::now());
+        $temp_period = CarbonPeriod::create($coins->first()->received_at, '1 day', Carbon::now()->endOfDay());
         $date_period = [];
 
         // Iterate over the period
