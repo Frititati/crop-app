@@ -87,6 +87,24 @@
     z-index: 0;
 }
 
+.crop-log-background {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: fixed;
+    overflow: hidden;
+    width: 405px;
+    height: 405px;
+    left: calc(50vw + 40px);
+    bottom: -150px;
+    z-index: 0;
+    animation: rotate-background-animation 100s linear 0s infinite;
+}
+
+@keyframes rotate-background-animation {
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
 /* Ui */
 
 .container-fluid {
@@ -275,16 +293,6 @@ img.drop-shadow {
     }
     100% {
         background-position:0% 0%;
-    }
-}
-
-.ellisse.animated-background {
-    animation: rotate-background-animation 20s linear 0s infinite;
-}
-
-@keyframes rotate-background-animation {
-    100% {
-        transform:rotate(360deg);
     }
 }
 
