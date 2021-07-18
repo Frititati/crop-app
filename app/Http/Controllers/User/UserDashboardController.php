@@ -5,11 +5,14 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Auth;
+use Carbon\Carbon;
+use Session;
+use DB;
+
 use App\Models\Coin\Coin;
 use App\Models\Portfolio\Portfolio;
 
-use Auth;
-use Carbon\Carbon;
 
 class UserDashboardController extends Controller
 {
@@ -33,13 +36,33 @@ class UserDashboardController extends Controller
         $count_coins_to_send = Coin::where('user_id', $user->id)->whereNull('user_sent_at')->count();
         $count_coins_sent = Coin::where('user_id', $user->id)->whereNotNull('user_sent_at')->count();
 
-        $count_coins_to_send = 75;
-
         // $time_elapsed_secs = microtime(true) - $start_time;
 
         // dd($time_elapsed_secs, $count_coins_to_send, $count_coins_sent);
 
         return view('user.dashboard', compact('user', 'count_coins_to_send', 'count_coins_sent'));
+    }
+
+    public function sendCoins()
+    {
+        $user = Auth::user();
+
+        $count_coins_to_send = Coin::where('user_id', $user->id)->whereNull('user_sent_at')->count();
+
+        if ($count_coins_to_send >= 100) {
+            // we can send the coins
+            DB::table('coin')
+                ->where('user_id', $user->id)
+                ->whereNull('user_sent_at')
+                ->update(['user_sent_at' => 'now()']);
+
+            Session::flash('message', 'Coin Spediti!');
+        } else {
+            // we can't send the coins
+            return back()->withErrors('Non ci sono abbastanza Coin da spedire.');
+        }
+
+        return back();
     }
 
     public function create()

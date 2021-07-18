@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('dashboard', 'App\Http\Controllers\User\UserDashboardController@index')->name('dashboard');
 
+Route::post('user_send_coins', 'App\Http\Controllers\User\UserDashboardController@sendCoins');
+
 Route::get('generation/manage/download_static', 'App\Http\Controllers\Management\GenerationController@downloadStatic');
 Route::post('generation/manage/qr_scan_in', 'App\Http\Controllers\Management\GenerationController@qrScanIn');
 Route::get('generation/manage/qr_scan_out', 'App\Http\Controllers\Management\GenerationController@qrScanOut');

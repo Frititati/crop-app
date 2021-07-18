@@ -36,7 +36,7 @@
     <body>
 
         @if($errors->any())
-            <div id="generic_error" class="notification is-error">
+            <div id="generic_error" class="notification is-error" style="z-index: 100;">
                 {{$errors->first()}}
             </div>
 
@@ -63,7 +63,7 @@
         @endif
 
         @if(session()->has('message'))
-            <div id="return_message" class="notification is-success">
+            <div id="return_message" class="notification is-success" style="z-index: 100;">
                 {{ session()->get('message') }}
             </div>
             <script type="text/javascript">

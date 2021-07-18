@@ -59,7 +59,7 @@
                 <div class="col">
                     <div class="row center-text">
                         <h5 class="mb-0 font-weight-bold">{{ $count_coins_to_send }}</h5>
-                        <img src="{{ asset('icons/seed-black.svg') }}" class="seme-icon-text">
+                        <img src="" class="seme-icon-text" id="pill-send-coin-seed-img">
                     </div>
                     <div class="row center-text">
                         <p class="mb-0" id="pill-send-coins-text">
@@ -170,20 +170,36 @@
         @if($count_coins_to_send >= 100)
             // this is where we can send coins
 
+            // set text color
+            $('#pill-send-coins').addClass("text-white");
+            // set seed color
+            $("#pill-send-coin-seed-img").attr("src","{{ asset('icons/seed-white.svg') }}");
+
             // set animation
             $('#pill-send-coins').css("animation", "pulse-send-coin-animation 4s ease-in-out 0s infinite");
 
             // change pill text
             $('#pill-send-coins-text').text("da spedire");
 
-            // set on click behaviour
-            // $("#pill-send-coins").click(function() {
-            //     $('#modal-cannot-send-coins').show();
-            // });
-
-
+            @if($user->portfolio_id)
+                // set on click behaviour
+                $("#pill-send-coins").click(function() {
+                    $('#modal-send-coins').show();
+                });
+            @else
+                $("#pill-send-coins").click(function() {
+                    $('#modal-no-portfolio').show();
+                    setTimeout(function(){ closeModalGeneric() }, 8000);
+                });
+            @endif
+            
         @else
             // this is where we can't send coins
+
+            // set text color
+            $('#pill-send-coins').addClass("text-black");
+            // set seed color
+            $("#pill-send-coin-seed-img").attr("src","{{ asset('icons/seed-black.svg') }}");
 
             // set gradient
             $('#pill-send-coins').css("background", "linear-gradient(0deg, rgba(70, 161, 126, 1) {{ $count_coins_to_send }}%, rgba(255,255,255,1) {{ $count_coins_to_send }}%)");
@@ -198,7 +214,7 @@
             // set on click behaviour
             $("#pill-send-coins").click(function() {
                 $('#modal-cannot-send-coins').show();
-                setTimeout(function(){ $('#modal-cannot-send-coins').hide(); }, 4000);
+                setTimeout(function(){ closeModalGeneric() }, 4000);
             });
 
         @endif
@@ -213,6 +229,7 @@
         function closeModalGeneric() {
             $('#modal-cannot-send-coins').hide();
             $('#modal-send-coins').hide();
+            $('#modal-no-portfolio').hide();
         }
 
     </script>
@@ -230,14 +247,35 @@
         </div>
     </div>
 
+    <div class="modal" id="modal-no-portfolio" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="border: 1px solid green;">
+                <div class="modal-body">
+                    <h5 class="text-black">
+                        Devi scegliere un portfolio, indicaci dove spedire i coin.
+                    </h5>
+                    <h5 class="text-black">
+                        Utilizza
+                        <img src="{{ asset('icons/pen.svg') }}" class="bg-light-green">
+                        per farlo
+                    </h5>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModalGeneric()">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal" id="modal-send-coins" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content" style="border: 1px solid green;">
                 <div class="modal-body">
                     <h5 class="text-black">
-                        Non si puo ancora spedire, servono 100 Coins
+                        Spedisci i coin verso le realta' del tuo portfolio!
                     </h5>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModalGeneric()">Chiudi</button>
+                    <form method="POST" action="/user_send_coins">
+                        @csrf
+                        <input type="submit" class="btn btn-primary" value="Spedisci">
+                    </form>
                 </div>
             </div>
         </div>
