@@ -80,12 +80,6 @@
         <!-- starting div is inside the content folder -->
             @yield('content')
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
             <!-- FOOTER -->
             <div class="footer">
                 <a href="{{ route('qr_scan') }}">

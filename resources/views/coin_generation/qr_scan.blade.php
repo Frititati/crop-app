@@ -28,7 +28,7 @@
     </div>
 
 
-    <form id="scanning_form" action="/qr_link" method="POST">
+    <form id="scanning_form" action="/qr_scan" method="POST">
         @csrf
         <input type="hidden" name="qr_code" id="form_qr_code">
     </form>

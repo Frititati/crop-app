@@ -31,14 +31,8 @@ class UserDashboardController extends Controller
             return redirect('/user_help');
         }
 
-        // $start_time = microtime(true);
-
         $count_coins_to_send = Coin::where('user_id', $user->id)->whereNull('user_sent_at')->count();
         $count_coins_sent = Coin::where('user_id', $user->id)->whereNotNull('user_sent_at')->count();
-
-        // $time_elapsed_secs = microtime(true) - $start_time;
-
-        // dd($time_elapsed_secs, $count_coins_to_send, $count_coins_sent);
 
         return view('user.dashboard', compact('user', 'count_coins_to_send', 'count_coins_sent'));
     }
@@ -56,7 +50,10 @@ class UserDashboardController extends Controller
                 ->whereNull('user_sent_at')
                 ->update(['user_sent_at' => 'now()']);
 
-            Session::flash('message', 'Coin Spediti!');
+            $charity = $user->portfolio->division->random()->charity;
+
+            return view('user.reward_message', compact('count_coins_to_send', 'charity'));
+
         } else {
             // we can't send the coins
             return back()->withErrors('Non ci sono abbastanza Coin da spedire.');

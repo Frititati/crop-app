@@ -6,6 +6,12 @@
 
 @section('content')
 
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
 <div class="container-fluid ui">
     <!-- Background -->
     <div class="svg-background">

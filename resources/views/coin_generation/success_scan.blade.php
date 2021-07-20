@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 
 <div class="container-fluid ui">
     <!-- Background -->
@@ -34,12 +39,11 @@
             <p class="transaction-description mb-2">Azienda: <b id="nome_azienda">{{ $generation->shop->name }}</b></p>
             <p class="transaction-description mb-2">Negozio: <b id="nome_negozio">{{ $generation->shop->address }}</b></p>
             <br>
-            <div class="row receive_crop_pill mx-3">
+            <!-- <div class="row receive_crop_pill mx-3">
                 <h5>
                     Grazie! Con questo acquisto hai contribuito a salvaguardare la salute dei cani e dei gatti piemontesi.
                 </h5>
-            </div>
-            <!-- <p class="transaction-description">Data: <b id="data_transazione">{{ $generation->shop->ts }}</b></p> -->
+            </div> -->
         </div>
     </div>
 

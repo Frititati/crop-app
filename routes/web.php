@@ -29,7 +29,7 @@ Route::resource('generation/manage', 'App\Http\Controllers\Management\Generation
 // Route::get('coin/create', 'App\Http\Controllers\Coin\CoinGenerationController@create');
 
 Route::get('qr_scan', 'App\Http\Controllers\Coin\CoinGenerationController@index')->name('qr_scan');
-Route::post('qr_link', 'App\Http\Controllers\Coin\CoinGenerationController@store');
+Route::post('qr_scan', 'App\Http\Controllers\Coin\CoinGenerationController@store');
 
 Route::get('portfolio/selection', 'App\Http\Controllers\Portfolio\PortfolioSelectionController@index')->name('portfolio_selection');
 
