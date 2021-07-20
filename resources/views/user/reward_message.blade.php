@@ -24,7 +24,7 @@
                 <br>
                 <br>
                 <p class="px-4 h4">
-                    Hai donato <strong>{{ $count_coins_to_send }}</strong> Coins
+                    Hai donato <strong>{{ $count_coins_to_send }}</strong> Crops
                 </p>
             </div>
 
