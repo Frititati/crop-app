@@ -239,7 +239,7 @@
             <div class="modal-content" style="border: 1px solid green;">
                 <div class="modal-body">
                     <h5 class="text-black">
-                        Non si puo ancora spedire, servono 100 Coins
+                        Non si puo ancora spedire, servono 100 Crops
                     </h5>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModalGeneric()">Chiudi</button>
                 </div>
@@ -252,7 +252,7 @@
             <div class="modal-content" style="border: 1px solid green;">
                 <div class="modal-body">
                     <h5 class="text-black">
-                        Devi scegliere un portfolio, indicaci dove spedire i coin.
+                        Devi scegliere un portfolio, indicaci dove spedire i Crops.
                     </h5>
                     <h5 class="text-black">
                         Utilizza
@@ -270,7 +270,7 @@
             <div class="modal-content" style="border: 1px solid green;">
                 <div class="modal-body">
                     <h5 class="text-black">
-                        Spedisci i coin verso le realta' del tuo portfolio!
+                        Spedisci i Crops verso le realta' del tuo portfolio!
                     </h5>
                     <form method="POST" action="/user_send_coins">
                         @csrf
