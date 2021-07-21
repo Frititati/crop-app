@@ -8,7 +8,7 @@ return [
 
     'char_2_a' => 'Grazie! Con questa donazione hai contribuito a sostenere la biodiversità della collina piemontese.',
 
-    'char_3_a' => 'Grazie! Con questa donazione hai contribuito alla riqualificazione urbana tramite la direzione di orti metropolitani nella zona di Barriera di Milano.',
+    'char_3_a' => 'Grazie! Con questa donazione hai contribuito alla riqualificazione urbana tramite la creazione di orti metropolitani nella zona di Barriera di Milano.',
 
     'char_4_a' => 'Grazie! Con questa donazione hai contribuito a salvaguardare la salute dei cani e dei gatti piemontesi.',
 

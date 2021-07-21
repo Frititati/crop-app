@@ -63,7 +63,7 @@
                     </div>
                     <div class="row center-text">
                         <p class="mb-0" id="pill-send-coins-text">
-                            min 100 da spedire
+                            min 100 da donare
                         </p>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         <img src="{{ asset('icons/seed-white.svg') }}" class="seme-icon-text">
                     </div>
                     <div class="row center-text">
-                        <p class="mb-0">spediti</p>
+                        <p class="mb-0">donati</p>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@
             $('#pill-send-coins').css("animation", "pulse-send-coin-animation 4s ease-in-out 0s infinite");
 
             // change pill text
-            $('#pill-send-coins-text').text("da spedire");
+            $('#pill-send-coins-text').text("da donare");
 
             @if($user->portfolio_id)
                 // set on click behaviour
@@ -209,7 +209,7 @@
             $('#pill-send-coins').css("animation", "wave-send-coin-animation 6s ease-in-out 0s infinite");
 
             // change pill text
-            $('#pill-send-coins-text').text("min 100 da spedire");
+            $('#pill-send-coins-text').text("min 100 da donare");
 
             // set on click behaviour
             $("#pill-send-coins").click(function() {
@@ -239,7 +239,7 @@
             <div class="modal-content" style="border: 1px solid green;">
                 <div class="modal-body">
                     <h5 class="text-black">
-                        Non si puo ancora spedire, servono 100 Crops
+                        Non puoi ancora donare, servono 100 Crops.
                     </h5>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModalGeneric()">Chiudi</button>
                 </div>
@@ -252,7 +252,7 @@
             <div class="modal-content" style="border: 1px solid green;">
                 <div class="modal-body">
                     <h5 class="text-black">
-                        Devi scegliere un portfolio, indicaci dove spedire i Crops.
+                        Devi scegliere un portfolio, indicaci come donare i Crops.
                     </h5>
                     <h5 class="text-black">
                         Utilizza
@@ -270,11 +270,11 @@
             <div class="modal-content" style="border: 1px solid green;">
                 <div class="modal-body">
                     <h5 class="text-black">
-                        Spedisci i Crops verso le realta' del tuo portfolio!
+                        Dona i Crops alle realtà del tuo portfolio!
                     </h5>
                     <form method="POST" action="/user_send_coins">
                         @csrf
-                        <input type="submit" class="btn btn-primary" value="Spedisci">
+                        <input type="submit" class="btn btn-primary" value="Dona">
                     </form>
                 </div>
             </div>

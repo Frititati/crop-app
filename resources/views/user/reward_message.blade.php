@@ -1,7 +1,7 @@
 @extends('layouts.crop_base_phone')
 
 @section('title')
-    {{ $charity->name }}
+    Crop - Grazie della Donazione
 @endsection
 
 @section('content')
@@ -18,24 +18,35 @@
         </a>
 
         <!-- this beauty vertically aligns all components in div -->
-        <div class="my-auto">
+        <!-- <div class="my-auto"> -->
 
-            <div id = "cloud_reward_message">
-                <br>
-                <br>
-                <p class="px-4 h4">
-                    Hai donato <strong>{{ $count_coins_to_send }}</strong> Crops
-                </p>
-            </div>
+        <div id = "cloud_reward_message">
+            <br>
+            <br>
+            <p class="px-4 h4">
+                Hai donato <strong>{{ $count_coins_to_send }}</strong> Crops
+            </p>
+        </div>
+
+        @foreach($user->portfolio->division as $division)
+            <h4>{{ $division->charity->name }}</h4>
 
             <p class="mx-auto px-5 h6 text-justify">
-                @lang('coin_send_messages.char_'.$charity->id.'_a')
+                @lang('coin_send_messages.char_'.$division->charity->id.'_a')
             </p>
+            <br>
+        @endforeach
 
-            <div class="d-flex flex-row justify-content-center negozio-profile-pic h-25 mb-3">
-                <img src="{{ asset('images/'.($charity->photo_path ?? 'default.png')) }}" class="negozio-profile-pic h-100 rounded-circle border" alt="Logo del negozio">
+        <!-- </div> -->
+
+        <div class="container">
+            <div class="row">
+                @foreach($user->portfolio->division as $division)
+                    <div class="col-6">
+                        <img src="{{ asset('images/'.($division->charity->photo_path ?? 'default.png')) }}" class="rounded-circle border img-fluid" alt="Logo del negozio">
+                    </div>
+                @endforeach
             </div>
-
         </div>
 
     </div>
@@ -57,32 +68,7 @@
             -moz-border-radius: 100px;
             
             position: relative;
-            margin: 120px auto 20px;
-        }
-
-        #cloud_reward_message:after, #cloud_reward_message:before {
-            content: '';
-            position: absolute;
-            background: #f2f9fe;
-            z-index: -1
-        }
-
-        #cloud_reward_message:after {
-            width: 90px; height: 100px;
-            top: -50px; left: 50px;
-            
-            border-radius: 100px;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-        }
-
-        #cloud_reward_message:before {
-            width: 162px; height: 180px;
-            top: -90px; right: 50px;
-            
-            border-radius: 200px;
-            -webkit-border-radius: 200px;
-            -moz-border-radius: 200px;
+            margin: 20px auto 20px;
         }
     </style>
 

@@ -50,13 +50,13 @@ class UserDashboardController extends Controller
                 ->whereNull('user_sent_at')
                 ->update(['user_sent_at' => 'now()']);
 
-            $charity = $user->portfolio->division->random()->charity;
+            // $charity = $user->portfolio->division->random()->charity;
 
-            return view('user.reward_message', compact('count_coins_to_send', 'charity'));
+            return view('user.reward_message', compact('count_coins_to_send', 'user'));
 
         } else {
             // we can't send the coins
-            return back()->withErrors('Non ci sono abbastanza Coin da spedire.');
+            return back()->withErrors('Non ci sono abbastanza Coin da donare.');
         }
 
         return back();
