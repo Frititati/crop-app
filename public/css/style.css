@@ -699,3 +699,12 @@ div.input-group-user-edit-single {
     border-radius: 1.5rem;
     z-index: 100;
 }
+
+.gradient-text-dashboard {
+    background: linear-gradient(300deg, var(--crop-yellow) 0%, var(--crop-green) 60%);
+    font-size: 2rem;
+    font-weight: 600;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1000;
+}

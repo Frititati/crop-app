@@ -22,6 +22,13 @@ class CharityViewController extends Controller
         return view('charity.selection');
     }
 
+    public function show($id)
+    {
+        $charity = Charity::findOrFail($id);
+
+        return view('charity.show', compact('charity'));
+    }
+
     public function category($category)
     {
         $charities = Charity::where('category', $category)->get();

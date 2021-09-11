@@ -39,6 +39,8 @@ Route::get('charity/{category}', 'App\Http\Controllers\Charity\CharityViewContro
 
 Route::get('charity', 'App\Http\Controllers\Charity\CharityViewController@index')->name('charity');
 
+Route::get('charity_view/{id}', 'App\Http\Controllers\Charity\CharityViewController@show');
+
 Route::get('shop_map', 'App\Http\Controllers\Shop\ShopViewController@index')->name('shop_map');
 
 Route::resource('shop/manage', 'App\Http\Controllers\Management\ShopController', array("as" => "shop_manage"));

@@ -34,7 +34,13 @@ class UserDashboardController extends Controller
         $count_coins_to_send = Coin::where('user_id', $user->id)->whereNull('user_sent_at')->count();
         $count_coins_sent = Coin::where('user_id', $user->id)->whereNotNull('user_sent_at')->count();
 
-        return view('user.dashboard', compact('user', 'count_coins_to_send', 'count_coins_sent'));
+        $charity = null;
+
+        if ($user->portfolio) {
+            $charity = $user->portfolio->division->first()->charity;
+        }
+
+        return view('user.dashboard', compact('user', 'count_coins_to_send', 'count_coins_sent', 'charity'));
     }
 
     public function sendCoins()

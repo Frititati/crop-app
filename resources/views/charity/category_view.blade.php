@@ -23,7 +23,11 @@
                     <div><img src="{{ asset('images/'.($charity->photo_path ?? "")) }}" class="w-100"></div>
                 </div>
                 <div class="d-flex flex-column col-8 pr-0">
-                    <h6><b>{{ $charity->name }}</b></h6>
+                    <h6>
+                        <a href="/charity_view/{{ $charity->id }}">
+                            <b>{{ $charity->name }}</b>
+                        </a>
+                    </h6>
                     <p class="justify-text">
                         {{ $charity->description }}
                     </p>

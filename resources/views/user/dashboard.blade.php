@@ -86,80 +86,53 @@
 
     </div>
 
-    @if($user->portfolio)
-        <!-- CHART -->
-        <div class="row justify-content-center mx-5">
-            <p class="text-large mb-2 text-center">Portfolio: <b>{{ $user->portfolio->name }}</b></p>
-            <canvas id="portfolio_distribution" class="doughnut-chart"></canvas>
+    @if($charity)
+
+        <div class="mx-5">
+            <h4 class="gradient-text-dashboard">
+                Grazie!
+                <br>
+                Stai aiutando
+            </h4>
+
+            <div style="max-width: 100%; position:relative;">
+                <a href="/charity_view/{{ $charity->id }}">
+                    <img src="{{ asset('images/dashboard/'.($charity->dashboard_photo ?? '')) }}" class="rounded mw-100"/>
+                </a>
+                <h3 class="font-weight-bold" style="position: absolute; top: 50%; left: 50%; transform: translate(-95%, -20%); color: white;">
+                    {{ $charity->short_name }}
+                </h3>
+            </div>
         </div>
 
-        <script src="{{ asset('js/chart.min.js') }}"></script>
+        <br>
 
-        <script type="text/javascript">
+        <div class="row flex-row justify-content-start mx-5">
+            <div class="option-btn rounded-circle bg-light-green p-2">
+                <a href="{{ route('portfolio_selection') }}">
+                    <img src="{{ asset('icons/pen.svg') }}">
+                </a>
+            </div>
+        </div>
 
-            window.addEventListener('load', function () {
-                loadPortfolioGraph();
-            })
+    @else
 
-
-            function loadPortfolioGraph() {
-                const dataPortfolio = {
-                    labels: [
-                        @foreach($user->portfolio->division as $division)
-                            @json($division->charity->name),
-                        @endforeach
-                    ],
-                    datasets: [{
-                        label: 'PortFolio',
-                        data: [
-                            @foreach($user->portfolio->division as $division)
-                                {{ $division->share }},
-                            @endforeach
-                        ],
-                        backgroundColor: [
-                            'rgb(70, 161, 126)',
-                            'rgb(123, 173, 119)',
-                            'rgb(165, 187, 111)'
-                        ],
-                        hoverOffset: 8
-                    }]
-                }
-
-                const context = document.getElementById('portfolio_distribution').getContext('2d');
-
-                const configDoughnut = {
-                    type: 'doughnut',
-                    data: dataPortfolio,
-                    options: {
-                        plugins: {
-                            legend: {
-                                display: false,
-                            },
-                            tooltip: {
-                                bodyColor: '#fff',
-                                bodyFont: {
-                                    weight: 'bold',
-                                },
-                                bodyAlign: 'center',
-                            },
-                        },
-                    }
-                };
-
-                const chartDoughnut = new Chart(context, configDoughnut)
-            }
-
-        </script>
+        <div class="row flex-row mx-2" style="min-height: 30vh">
+            <a href="{{ route('portfolio_selection') }}" class="align-self-center text-center gradient-text-dashboard">
+                Seleziona una Realtà da Aiutare
+            </a>
+        </div>
+        <div class="row flex-row justify-content-end mx-5">
+            <div class="option-btn rounded-circle bg-light-green p-2">
+                <a href="{{ route('portfolio_selection') }}">
+                    <img src="{{ asset('icons/pen.svg') }}">
+                </a>
+            </div>
+        </div>
 
     @endif
 
-    <div class="row flex-row justify-content-end">
-        <div class="option-btn rounded-circle bg-light-green p-2 mr-5">
-            <a href="{{ route('portfolio_selection') }}">
-                <img src="{{ asset('icons/pen.svg') }}">
-            </a>
-        </div>
-    </div>
+    
 
     <script type="text/javascript">
         // this JS is for the pill coin sending
