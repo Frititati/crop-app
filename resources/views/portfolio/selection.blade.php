@@ -28,15 +28,6 @@
                 <div class="row mx-1">
                     <p class="mb-2">{{ $portfolio->description }}</p>
                 </div>
-                <div class=" d-flex flex-row flex-wrap justify-content-center w-100 p-1 mb-3 rounded">
-                    @foreach($portfolio->division as $divisor)
-                        <div
-                            class="d-flex flex-column rounded-circle bg-color-crop-yellow justify-content-center align-content-center center-text portfolio-pill p-2 mx-2 filter-drop-shadow">
-                           <!-- <h6 class="mb-1 font-weight-bold">{{ round($divisor->share, 2)."%" }}</h6>-->
-                            <p class="mb-0">{{ $divisor->charity->short_name }}</p>
-                        </div>
-                    @endforeach
-                </div>
                 @if(Auth::user()->portfolio_id != $portfolio->id)
                     <input type="submit" value="Seleziona" class="w-50 rounded bg-color-crop-green mx-auto center-text">
                 @else
